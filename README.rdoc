@@ -1,3 +1,7 @@
+![Build Status](https://codeship.com/projects/353cf3e0-0809-0133-3467-025d73056a1f/status?branch=master)
+![Code Climate](https://codeclimate.com/github/bsterno/team-up.png)
+![Coverage Status](https://coveralls.io/repos/bsterno/team-up/badge.png)
+
 == README
 
 This README would normally document whatever steps are necessary to get the
