@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TeamUp</title>
+  <title>TeamUP</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag "vendor/modernizr" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
+
   <nav class="top-bar">
     <ul class="title-area">
       <li class="name">
-        <h1><a href="/">TeamUp</a></h1>
+        <h1><%= link_to 'TeamUP', games_path %></h1>
       </li>
     </ul>
 
     <section class="top-bar-section">
       <ul class="right">
         <%- if current_user -%>
+          <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>
           <li><%= link_to 'Sign Up', new_user_registration_path %></li>
@@ -26,11 +28,14 @@
     </section>
   </nav>
 
-  <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
-    </div>
-  <%- end -%>
+  <% flash.keys.each do |type| %>
+    <% flash[type].split(":( ").each do |f| %>
+      <div data-alert class="flash <%= type %> alert-box radius">
+          <%= f %>
+        <a href="#" class="close">&times;</a>
+      </div>
+    <% end %>
+  <% end %>
 
   <%= yield %>
 

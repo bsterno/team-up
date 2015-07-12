@@ -1,0 +1,24 @@
+<h1>Create a Game</h1>
+<%= form_for @game do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :sport %>
+  <%= f.text_field :sport %>
+
+  <%= f.label :start_date %>
+  <%= f.datetime_select :start_date, :ampm => true, :minute_step => 30 %>
+
+  <%= f.label :street_address %>
+  <%= f.text_field :street_address %>
+
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+
+  <%= f.label :max_players %>
+  <%= f.number_field :max_players %>
+
+  <%= f.submit "Create Game" %>
+
+<% end %>
