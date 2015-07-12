@@ -16,13 +16,16 @@ ActiveRecord::Schema.define(version: 20150710023640) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "lobbies", force: :cascade do |t|
+  create_table "games", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "game",        null: false
-    t.string   "name",        null: false
-    t.integer  "max_players"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "name",                       null: false
+    t.string   "sport",                      null: false
+    t.string   "street_address",             null: false
+    t.string   "city",                       null: false
+    t.datetime "start_date",                 null: false
+    t.integer  "max_players",    default: 0
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "users", force: :cascade do |t|
