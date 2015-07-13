@@ -1,5 +1,7 @@
 class Game < ActiveRecord::Base
   belongs_to :user
+  has_many :players, dependent: :destroy
+
   validates :user, presence: true
   validates :name, presence: true, uniqueness: true
   validates :sport, presence: true
