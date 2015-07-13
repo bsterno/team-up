@@ -30,11 +30,14 @@ so that others can join it" do
     fill_in :game_max_players, with: "10"
     click_button "Create Game"
 
-    expect(page).to have_content("Soccer")
     expect(page).to have_content("5-Aside Madness")
+    expect(page).to have_content("Soccer")
+    expect(page).to have_content("15/07 17:30")
+    expect(page).to have_content("Boston")
     expect(page).to have_content("10")
     expect(page).to have_content("Game Created")
   end
+
   scenario 'User fills in bathroom form with invalid information' do
     user = FactoryGirl.create(:user)
     visit new_user_session_path
