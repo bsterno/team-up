@@ -1,0 +1,22 @@
+<%= link_to "Back to Games", games_path %>
+
+<h1>
+  <%= @game.name %>
+</h1>
+
+<h3>
+  <strong>Sport:</strong> <%= @game.sport %><br>
+  <strong>Location:</strong> <%= @game.street_address %>, <%= @game.city %>
+</h3>
+
+<table>
+    <tr>
+      <th>Start Date/Time</th>
+      <th>Max Players</th>
+    </tr>
+
+    <tr>
+      <td><%= @game.start_date %></td>
+      <td><%= @game.max_players %></td>
+    </tr>
+</table>

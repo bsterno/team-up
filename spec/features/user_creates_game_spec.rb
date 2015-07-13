@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 # Acceptance Criteria
-# [x] There is a new page
-# [x] I can submit a form to add a new game
-# [ ] I am notified when I create a new game
-# [ ] I am notified when a form is filled out incorrectly
+# [✓] There is a new page
+# [✓] I can submit a form to add a new game
+# [✓] I am notified when I create a new game
+# [✓] I am notified when a form is filled out incorrectly
 
 feature "As a user
 I want to add a game
@@ -34,5 +34,21 @@ so that others can join it" do
     expect(page).to have_content("5-Aside Madness")
     expect(page).to have_content("10")
     expect(page).to have_content("Game Created")
+  end
+  scenario 'User fills in bathroom form with invalid information' do
+    user = FactoryGirl.create(:user)
+    visit new_user_session_path
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button "Log in"
+
+    visit games_path
+    click_link 'Create New Game'
+    click_button "Create Game"
+    expect(page).to have_content("Name can't be blank")
+    expect(page).to have_content("Sport can't be blank")
+    expect(page).to have_content("Street address can't be blank")
+    expect(page).to have_content("City can't be blank")
+    expect(page).to have_content("Max players can't be blank")
   end
 end

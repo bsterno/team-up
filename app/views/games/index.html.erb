@@ -4,13 +4,13 @@
     <tr>
       <th>Game Name</th>
       <th>Sport</th>
-      <th>Start Date</th>
+      <th>Start Date/Time</th>
       <th>Location</th>
       <th>Max Players</th>
     </tr>
     <% @games.each do |game| %>
     <tr>
-      <td><%= game.name %></td>
+      <td><%= link_to game.name, game_path(game) %></td>
       <td><%= game.sport %></td>
       <td><%= game.start_date %></td>
       <td><%= game.city %></td>

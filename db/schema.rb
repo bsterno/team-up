@@ -18,14 +18,14 @@ ActiveRecord::Schema.define(version: 20150710023640) do
 
   create_table "games", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "name",                       null: false
-    t.string   "sport",                      null: false
-    t.string   "street_address",             null: false
-    t.string   "city",                       null: false
-    t.datetime "start_date",                 null: false
-    t.integer  "max_players",    default: 0
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "name",           null: false
+    t.string   "sport",          null: false
+    t.string   "street_address", null: false
+    t.string   "city",           null: false
+    t.datetime "start_date",     null: false
+    t.integer  "max_players",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|

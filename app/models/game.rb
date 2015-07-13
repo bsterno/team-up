@@ -6,5 +6,5 @@ class Game < ActiveRecord::Base
   validates :street_address, presence: true
   validates :city, presence: true
   validates :start_date, presence: true
-  validates :max_players, numericality: { only_integer: true }
+  validates :max_players, presence: true, numericality: { only_integer: true }
 end

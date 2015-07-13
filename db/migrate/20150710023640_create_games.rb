@@ -7,7 +7,7 @@ class CreateGames < ActiveRecord::Migration
       t.string :street_address, null: false
       t.string :city, null: false
       t.datetime :start_date, null: false
-      t.integer :max_players, default: 0
+      t.integer :max_players, null: false
 
       t.timestamps null: false
     end
