@@ -20,11 +20,12 @@ so that others can join it" do
     click_link 'Create New Game'
     fill_in :game_name, with: "5-Aside Madness"
     fill_in :game_sport, with: "Soccer"
-    select "2015", from: :game_start_date_1i
-    select "July", from: :game_start_date_2i
-    select "15", from: :game_start_date_3i
-    select "05 PM", from: :game_start_date_4i
-    select "30", from: :game_start_date_5i
+    fill_in :game_start_date, with: "2015-07-13T00:00:00"
+    # select "2015", from: :game_start_date_1i
+    # select "July", from: :game_start_date_2i
+    # select "15", from: :game_start_date_3i
+    # select "05 PM", from: :game_start_date_4i
+    # select "30", from: :game_start_date_5i
     fill_in :game_street_address, with: "123 Street"
     fill_in :game_city, with: "Boston"
     fill_in :game_max_players, with: "10"
@@ -32,7 +33,7 @@ so that others can join it" do
 
     expect(page).to have_content("5-Aside Madness")
     expect(page).to have_content("Soccer")
-    expect(page).to have_content("15/07 17:30")
+    expect(page).to have_content("Jul 13 - 12:00 AM")
     expect(page).to have_content("Boston")
     expect(page).to have_content("10")
     expect(page).to have_content("Game Created")

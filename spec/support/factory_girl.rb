@@ -16,5 +16,4 @@ FactoryGirl.define do
     start_date "2015-07-13 21:00:00 UTC"
     max_players "10"
   end
-
 end

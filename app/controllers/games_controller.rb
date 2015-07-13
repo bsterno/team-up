@@ -6,6 +6,8 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @players = Player.where(game: @game)
+    @player = Player.find_by(game: @game)
   end
 
   def new
@@ -17,7 +19,7 @@ class GamesController < ApplicationController
     @game.user = current_user
 
     if @game.save
-      flash[:notice] = "Game Created"
+      flash[:success] = "Game Created"
       redirect_to games_path
     else
       flash.now[:alert] = @game.errors.full_messages.join(":( ")
@@ -27,13 +29,13 @@ class GamesController < ApplicationController
 
   def destroy
     @game = Game.find(params[:id]).destroy
-    flash[:notice] = "Game Deleted"
+    flash[:success] = "Game Deleted"
     redirect_to games_path
   end
 
   protected
 
   def game_params
-    params.require(:game).permit(:name, :sport, :start_date, :street_address, :city, :max_players)
+    params.require(:game).permit(:user_id, :name, :sport, :start_date, :street_address, :city, :max_players)
   end
 end
