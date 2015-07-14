@@ -11,4 +11,17 @@ class PlayersController < ApplicationController
     flash[:success] = "Game Joined"
     redirect_to game_path(@game)
   end
+
+  def destroy
+    @game = Game.find(params[:game_id])
+    @player = Player.find_by(user: current_user, game: @game).destroy
+    flash[:success] = "You've left this game"
+    redirect_to game_path(@game)
+  end
+
+  protected
+
+  def player_params
+    params.require(:player).permit(:user_id, :game_id)
+  end
 end

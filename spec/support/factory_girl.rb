@@ -20,4 +20,9 @@ FactoryGirl.define do
   factory :sport do
     sequence(:name) { |n| "Soccer #{n}" }
   end
+
+  factory :player do
+    user
+    game
+  end
 end
