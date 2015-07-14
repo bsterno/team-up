@@ -1,0 +1,23 @@
+<h1>Add Sport</h1>
+<%= form_for @sport do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit "Add Sport" %>
+
+<% end %>
+<br>
+
+<table>
+    <tr>
+      <th>Full List of Sports</th>
+    </tr>
+    <% @sports.each do |sport| %>
+    <tr>
+      <td><%= sport.name %></td>
+    </tr>
+    <% end %>
+</table>
+
+<%= link_to "Back to Games", games_path %>

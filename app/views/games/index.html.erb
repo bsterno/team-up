@@ -11,7 +11,7 @@
     <% @games.each do |game| %>
     <tr>
       <td><%= link_to game.name, game_path(game) %></td>
-      <td><%= game.sport %></td>
+      <td><%= game.sport.name %></td>
       <td><%= game.start_date %></td>
       <td><%= game.city %></td>
       <td><%= game.max_players %></td>

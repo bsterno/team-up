@@ -3,7 +3,7 @@
 </h1>
 
 <h3>
-  <strong>Sport:</strong> <%= @game.sport %><br>
+  <strong>Sport:</strong> <%= @game.sport.name %><br>
   <strong>Location:</strong> <%= @game.street_address %>, <%= @game.city %>
 </h3>
 
@@ -11,7 +11,7 @@
     <tr>
       <th>Start Date/Time</th>
       <th>Max Players</th>
-      <th>Player Status</th>
+      <th>Your Status</th>
     </tr>
 
     <tr>
@@ -20,7 +20,7 @@
       <% if @player.nil? %>
         <td><%= button_to "Join Game", game_players_path(@game), method: :post %></td>
       <% else %>
-        <td><%= "Currently Attending" %></td>
+        <td><%= "Attending" %></td>
       <% end %>
     </tr>
 </table>

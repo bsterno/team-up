@@ -10,10 +10,14 @@ FactoryGirl.define do
   factory :game do
     user
     sequence(:name) { |n| "Let's go Ball! #{n}" }
-    sport "Soccer"
+    sport
     street_address "123 Road"
     city "Boston"
     start_date "2015-07-13 21:00:00 UTC"
     max_players "10"
+  end
+
+  factory :sport do
+    sequence(:name) { |n| "Soccer #{n}" }
   end
 end
