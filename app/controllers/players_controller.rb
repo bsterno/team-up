@@ -14,9 +14,14 @@ class PlayersController < ApplicationController
 
   def destroy
     @game = Game.find(params[:game_id])
-    @player = Player.find(params[:id]).destroy
+    @player = Player.find_by(user: current_user, game: @game).destroy
     flash[:success] = "You've left this game"
-    redirect_to games_path
+    redirect_to game_path(@game)
   end
-  
+
+  protected
+
+  def player_params
+    params.require(:player).permit(:user_id, :game_id)
+  end
 end

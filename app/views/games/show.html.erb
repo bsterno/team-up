@@ -8,31 +8,40 @@
 </h3>
 
 <table>
+  <thead>
     <tr>
       <th>Start Date/Time</th>
       <th>Max Players</th>
       <th>Your Status</th>
     </tr>
-
+  </thead>
+  <tbody>
     <tr>
       <td><%= @game.start_date %></td>
       <td><%= @game.max_players %></td>
       <% if @player.nil? %>
+        <td>Not Attending</td>
         <td><%= button_to "Join Game", game_players_path(@game), method: :post %></td>
       <% else %>
-        <td><%= button_to "Leave Game", game_players_path(@game), method: :delete %></td>
+        <td>Attending</td>
+        <td><%= button_to "Leave Game", game_player_path(@game, @player), method: :delete %></td>
       <% end %>
     </tr>
+  </tbody>
 </table>
 
   <table>
-    <tr>
-      <th>Players</th>
-    </tr>
+    <thead>
+      <tr>
+        <th>Players</th>
+      </tr>
+    </thead>
     <% @players.each do |player| %>
-    <tr>
-      <td><%= player.user.email %></td>
-    </tr>
+    <tbody>
+      <tr>
+        <td><%= player.user.email %></td>
+      </tr>
+    </tbody>
     <% end %>
   </table>
 
