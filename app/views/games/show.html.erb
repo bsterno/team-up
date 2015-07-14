@@ -20,7 +20,7 @@
       <% if @player.nil? %>
         <td><%= button_to "Join Game", game_players_path(@game), method: :post %></td>
       <% else %>
-        <td><%= "Attending" %></td>
+        <td><%= button_to "Leave Game", game_players_path(@game), method: :delete %></td>
       <% end %>
     </tr>
 </table>
