@@ -1,7 +1,8 @@
 class GamesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
+
   def index
-    @games = Game.all
+    @games = Game.all.order(:start_date)
   end
 
   def show
@@ -36,6 +37,6 @@ class GamesController < ApplicationController
   protected
 
   def game_params
-    params.require(:game).permit(:user_id, :name, :sport, :start_date, :street_address, :city, :max_players)
+    params.require(:game).permit(:user_id, :name, :sport_id, :start_date, :street_address, :city, :max_players)
   end
 end

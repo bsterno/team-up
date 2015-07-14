@@ -4,7 +4,7 @@ require 'rails_helper'
 # [✓] There is a join button on the show page
 # [✓] I can click the button to join a game
 # [✓] I am notified when I join a game
-# [ ] I can only see the join button if I am not a player in the game
+# [✓] I can only see the join button if I am not a player in the game
 
 feature "As a user
 I want to join a game

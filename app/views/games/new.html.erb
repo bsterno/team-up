@@ -1,11 +1,14 @@
 <h1>Create a Game</h1>
+
+<h4>Don't see your sport? Add it to our database <%= link_to "here", new_sport_path %>.</h4>
+
 <%= form_for @game do |f| %>
 
   <%= f.label :name %>
   <%= f.text_field :name %>
 
   <%= f.label :sport %>
-  <%= f.text_field :sport %>
+  <%= f.collection_select :sport_id, Sport.all.order('name'), :id, :name %>
 
   <%= f.label :start_date %>
   <%= f.datetime_local_field :start_date, value: "#{Date.today}", min: Date.today %>

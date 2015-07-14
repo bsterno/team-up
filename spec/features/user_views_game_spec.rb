@@ -20,7 +20,7 @@ So that I can get more information about it" do
     click_link game.name
 
     expect(page).to have_content(game.name)
-    expect(page).to have_content(game.sport)
+    expect(page).to have_content(game.sport.name)
     expect(page).to have_content(game.street_address)
     expect(page).to have_content(game.city)
     expect(page).to have_content(game.start_date)
