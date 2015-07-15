@@ -4,11 +4,11 @@
 
 <%= form_for @game do |f| %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
   <%= f.label :sport %>
   <%= f.collection_select :sport_id, Sport.all.order('name'), :id, :name %>
+
+  <%= f.label "Game Description" %>
+  <%= f.text_field :description %>
 
   <%= f.label :start_date %>
   <%= f.datetime_local_field :start_date, value: "#{Date.today}", min: Date.today %>
