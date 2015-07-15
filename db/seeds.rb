@@ -6,6 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Sport.create!(name: "Soccer")
+Sport.create!(name: "Badminton")
+Sport.create!(name: "Baseball")
 Sport.create!(name: "Basketball")
+Sport.create!(name: "Field Hockey")
+Sport.create!(name: "Golf")
+Sport.create!(name: "Ice Hockey")
+Sport.create!(name: "Soccer")
 Sport.create!(name: "Tennis")
