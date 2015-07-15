@@ -51,4 +51,5 @@ gem 'shoulda-matchers', group: [:development, :test], require: false
 gem 'devise'
 gem 'foundation-rails'
 gem 'rails_12factor', group: :production
+gem 'jquery-datatables-rails', '~> 3.3.0'
 ruby "2.0.0"
