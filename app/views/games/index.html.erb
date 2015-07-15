@@ -6,6 +6,7 @@
       <th>Sport</th>
       <th>Game Description</th>
       <th>Start Date</th>
+      <th>Start Time</th>
       <th>City</th>
       <th>Max Players</th>
     </tr>
@@ -16,8 +17,13 @@
       <td><%= game.sport.name %></td>
       <td><%= link_to game.description, game_path(game) %></td>
       <td><%= game.start_date %></td>
+      <td><%= game.start_date.strftime("%n %I:%M %p") %></td>
       <td><%= game.city %></td>
-      <td><%= game.max_players %></td>
+      <% if game.players.count == game.max_players %>
+      <td>FULL</td>
+      <% else %>
+      <td><%= game.players.count %>/<%= game.max_players %></td>
+      <% end %>
     </tr>
     <% end %>
   </tbody>

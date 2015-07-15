@@ -11,17 +11,26 @@
   <thead>
     <tr>
       <th>Start Date/Time</th>
-      <th>Max Players</th>
+      <th>Player List</th>
       <th>Your Status</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><%= @game.start_date %></td>
-      <td><%= @game.max_players %></td>
+      <% if @players.count == @game.max_players %>
+      <td>FULL</td>
+      <% else %>
+      <td><%= @players.count %>/<%= @game.max_players %></td>
+      <% end %>
+
       <% if @player.nil? %>
         <td>Not Attending</td>
+        <% if @players.count == @game.max_players %>
+        <td>
+          <% else %>
         <td><%= button_to "Join Game", game_players_path(@game), method: :post %></td>
+          <% end %>
       <% else %>
         <td>Attending</td>
         <td><%= button_to "Leave Game", game_player_path(@game, @player), method: :delete %></td>

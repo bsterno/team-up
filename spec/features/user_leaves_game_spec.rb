@@ -9,10 +9,10 @@ require 'rails_helper'
 feature "As a user
 I want to leave a game
 so that I no longer am attending this game" do
-  scenario "User joins a game" do
+  scenario "User leaves a game" do
     user = FactoryGirl.create(:user)
     user2 = FactoryGirl.create(:user)
-    game = FactoryGirl.create(:game, user: user)
+    game = FactoryGirl.create(:game)
     FactoryGirl.create(:player, user: user2, game: game)
     FactoryGirl.create(:player, user: user, game: game)
     visit new_user_session_path
@@ -25,5 +25,18 @@ so that I no longer am attending this game" do
     click_button "Leave Game"
     expect(page).to have_content("You've left this game")
     expect(page).to have_content(user2.email)
+  end
+
+  scenario "User cannot leave a game they have already left" do
+    user = FactoryGirl.create(:user)
+    game = FactoryGirl.create(:game)
+    visit new_user_session_path
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
+    click_button "Log in"
+    visit game_path(game)
+
+    expect(page).to_not have_button("Leave Game")
+    expect(page).to have_button("Join Game")
   end
 end
