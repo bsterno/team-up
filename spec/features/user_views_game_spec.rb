@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 # Acceptance Criteria
-# [x] I can click on a game from the index page
-# [x] There is a show page for a game
-# [x] I can see details about the game on the show page
+# [✓] I can click on a game from the index page
+# [✓] There is a show page for a game
+# [✓] I can see details about the game on the show page
 
 feature "As an authenticated user
 I want to view the details about a game

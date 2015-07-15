@@ -29,7 +29,7 @@ so that others can join it" do
 
     expect(page).to have_content("5-Aside Madness")
     expect(page).to have_content(sport.name)
-    expect(page).to have_content("Jul 13 - 12:00 AM")
+    expect(page).to have_content("07/13, Monday")
     expect(page).to have_content("Boston")
     expect(page).to have_content("10")
     expect(page).to have_content("Game Created")
