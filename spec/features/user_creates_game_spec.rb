@@ -19,7 +19,7 @@ so that others can join it" do
 
     visit games_path
     click_link 'Create New Game'
-    fill_in :game_name, with: "5-Aside Madness"
+    fill_in :game_description, with: "5-Aside Madness"
     select sport.name, from: :game_sport_id
     fill_in :game_start_date, with: "2015-07-13T00:00:00"
     fill_in :game_street_address, with: "123 Street"
@@ -45,7 +45,7 @@ so that others can join it" do
     visit games_path
     click_link 'Create New Game'
     click_button "Create Game"
-    expect(page).to have_content("Name can't be blank")
+    expect(page).to have_content("Description can't be blank")
     expect(page).to have_content("Sport can't be blank")
     expect(page).to have_content("Street address can't be blank")
     expect(page).to have_content("City can't be blank")

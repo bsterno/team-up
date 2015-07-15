@@ -9,7 +9,7 @@ FactoryGirl.define do
 
   factory :game do
     user
-    sequence(:name) { |n| "Let's go Ball! #{n}" }
+    sequence(:description) { |n| "Shot Practice! #{n}" }
     sport
     street_address "123 Road"
     city "Boston"

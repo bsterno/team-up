@@ -17,9 +17,9 @@ So that I can get more information about it" do
     click_button "Log in"
     game = FactoryGirl.create(:game, user: user)
     visit games_path
-    click_link game.name
+    click_link game.description
 
-    expect(page).to have_content(game.name)
+    expect(page).to have_content(game.description)
     expect(page).to have_content(game.sport.name)
     expect(page).to have_content(game.street_address)
     expect(page).to have_content(game.city)
