@@ -29,6 +29,6 @@ FactoryGirl.define do
 
   factory :state do
     sequence(:abbr) { |n| "AK #{n}" }
-    sequence(:name) { |n| "Alaska #{n}"}
+    sequence(:name) { |n| "Alaska #{n}" }
   end
 end
