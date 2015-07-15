@@ -1,9 +1,19 @@
 body {
-  background: image_url("polygon_green.jpg") no-repeat center center fixed;
-  background-size: cover;
-  background-position: center top;
-  overflow-x: hidden;
-  color: white;
-  font-family: Bandung, Arial, sans-serif;
-  font-weight: 400;
+  background-color: #bdc3c7;
+}
+
+#featured {
+  background-color: #1abc9c;
+  height: 388px;
+  width: 100%;
+}
+
+#featured-small {
+  background-color: #1abc9c;
+  height: 388px;
+  width: 100%;
+}
+
+.large-3 img {
+  width: 100%;
 }
