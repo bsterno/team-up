@@ -13,6 +13,7 @@ FactoryGirl.define do
     sport
     street_address "123 Road"
     city "Boston"
+    state
     start_date "2015-07-13 21:00:00 UTC"
     max_players "10"
   end
@@ -24,5 +25,10 @@ FactoryGirl.define do
   factory :player do
     user
     game
+  end
+
+  factory :state do
+    sequence(:abbr) { |n| "AK #{n}" }
+    sequence(:name) { |n| "Alaska #{n}"}
   end
 end

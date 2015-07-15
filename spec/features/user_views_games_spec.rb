@@ -13,6 +13,7 @@ I want to see a list of sport games." do
     expect(page).to have_content(game.sport.name)
     expect(page).to have_content(game.start_date)
     expect(page).to have_content(game.city)
+    expect(page).to have_content(game.state.abbr)
     expect(page).to have_content(game.max_players)
   end
 end
