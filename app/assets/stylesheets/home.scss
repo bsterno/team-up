@@ -1,9 +1,41 @@
 body {
-  background: image_url("polygon_green.jpg") no-repeat center center fixed;
+  background: image_url("gray_gradient.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-position: center top;
-  overflow-x: hidden;
-  color: white;
-  font-family: Bandung, Arial, sans-serif;
-  font-weight: 400;
+}
+
+.footer {
+  background-color: #34495e;
+}
+
+#featured {
+  background-color: #1abc9c;
+  height: 388px;
+  width: 100%;
+}
+
+.large-3 .mini-1 {
+  background-color: #e74c3c;
+  height: 220px;
+  width: 100%;
+}
+
+.large-3 .mini-2 {
+  background-color: #3498db;
+  height: 220px;
+  width: 100%;
+}
+
+.large-3 .mini-3 {
+  background-color: #9b59b6;
+  height: 220px;
+  width: 100%;
+}
+
+.large-3 .mini-4 {
+  background-color: #e67e22;
+  height: 220px;
+  width: 100%;
 }
