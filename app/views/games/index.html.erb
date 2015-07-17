@@ -1,34 +1,42 @@
-<h1>Games</h1>
+<div class="row">
+  <div class="large-12 columns">
+      <div id="featured">
 
-<table id="table_id" class="display">
-  <thead>
-    <tr>
-      <th>Sport</th>
-      <th>Game Description</th>
-      <th>Start Date</th>
-      <th>Start Time</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Max Players</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @games.each do |game| %>
-    <tr>
-      <td><%= game.sport.name %></td>
-      <td><%= link_to game.description, game_path(game) %></td>
-      <td><%= game.start_date %></td>
-      <td><%= game.start_date.strftime("%n %I:%M %p") %></td>
-      <td><%= game.city %></td>
-      <td><%= game.state.abbr %></td>
-      <% if game.players.count == game.max_players %>
-      <td>FULL</td>
-      <% else %>
-      <td><%= game.players.count %>/<%= game.max_players %></td>
-      <% end %>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+        <h1>Games</h1>
 
-<%=link_to "Create New Game", new_game_path %>
+        <table id="table_id" class="display">
+          <thead>
+            <tr>
+              <th>Sport</th>
+              <th>Game Description</th>
+              <th>Start Date</th>
+              <th>Start Time</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Max Players</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @games.each do |game| %>
+            <tr>
+              <td><%= game.sport.name %></td>
+              <td><%= link_to game.description, game_path(game) %></td>
+              <td><%= game.start_date %></td>
+              <td><%= game.start_date.strftime("%l:%M %p") %></td>
+              <td><%= game.city %></td>
+              <td><%= game.state.abbr %></td>
+              <% if game.players.count == game.max_players %>
+              <td>FULL</td>
+              <% else %>
+              <td><%= game.players.count %>/<%= game.max_players %></td>
+              <% end %>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%=link_to "Create New Game", new_game_path %>
+
+    </div>
+  </div>
+</div><br>

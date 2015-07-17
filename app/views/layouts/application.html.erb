@@ -14,26 +14,37 @@
 
       <nav class="top-bar" data-topbar>
         <ul class="title-area">
+
           <li class="name">
-            <h1>
-              <%= link_to "TeamUP", root_path %>
-            </h1>
+              <%= link_to image_tag('arrow_logo.png'), root_path, class:"logo" %>
           </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
         </ul>
 
         <section class="top-bar-section">
+
           <ul class="right">
-            <%- if current_user -%>
-              <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
-              <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-            <%- else -%>
-              <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-              <li><%= link_to 'Sign In', new_user_session_path %></li>
-            <%- end -%>
+            <li class="has-dropdown">
+              <%- if current_user -%>
+                <li class="sign-in"><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+                <li class="divider"></li>
+                <li class="sign-in"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+              <%- else -%>
+                <li class="sign-in"><%= link_to 'Sign Up', new_user_registration_path %></li>
+                <li class="divider"></li>
+                <li class="sign-in"><%= link_to 'Sign In', new_user_session_path %></li>
+              <%- end -%>
+              <ul class="dropdown">
+                <li><a href="#">Dropdown Option</a></li>
+                <li><a href="#">Dropdown Option</a></li>
+                <li><a href="#">Dropdown Option</a></li>
+                <li class="divider"></li>
+                <li><a href="#">See all →</a></li>
+              </ul>
+            </li>
           </ul>
         </section>
       </nav>
-
 
       <div class="row">
         <div class="small-6 columns small-centered">
@@ -48,23 +59,23 @@
         </div>
       </div>
 
+      <div class="page-wrap">
       <%= yield %>
+      </div>
 
       <%= javascript_include_tag 'application' %>
       <%= yield :extra_footer %>
 
-        <div class="footer large-12 columns">
+        <div class="site-footer large-12 columns">
           <hr>
           <div class="row">
-            <div class="large-6 columns">
-              <p>© Copyright no one at all. Go to town.</p>
+            <div class="small-6 centered columns">
+              <p>Created by <%= link_to "Brian Stern", "https://github.com/bsterno" %></p>
             </div>
-            <div class="large-6 columns">
+            <div class="small-6 columns">
               <ul class="inline-list right">
                 <li><a href="#">Link 1</a></li>
                 <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
-                <li><a href="#">Link 4</a></li>
               </ul>
             </div>
           </div>
