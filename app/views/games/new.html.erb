@@ -1,30 +1,38 @@
-<h1>Create a Game</h1>
+<div class="row">
+  <div class="large-12 columns">
+      <div id="featured">
 
-<h4>Don't see your sport? Add it to our database <%= link_to "here", new_sport_path %>.</h4>
+        <h1>Create a Game</h1>
 
-<%= form_for @game do |f| %>
+        <h4>Don't see your sport? Add it to our database <%= link_to "here", new_sport_path %>.</h4>
 
-  <%= f.label :sport %>
-  <%= f.collection_select :sport_id, Sport.all.order('name'), :id, :name %>
+        <%= form_for @game do |f| %>
 
-  <%= f.label "Game Description" %>
-  <%= f.text_field :description %>
+          <%= f.label :sport %>
+          <%= f.collection_select :sport_id, Sport.all.order('name'), :id, :name %>
 
-  <%= f.label :start_date %>
-  <%= f.datetime_local_field :start_date, value: "#{Date.today}", min: Date.today %>
+          <%= f.label "Game Description" %>
+          <%= f.text_field :description %>
 
-  <%= f.label :street_address %>
-  <%= f.text_field :street_address %>
+          <%= f.label :start_date %>
+          <%= f.datetime_local_field :start_date, value: "#{Date.today}", min: Date.today %>
 
-  <%= f.label :city %>
-  <%= f.text_field :city %>
+          <%= f.label :street_address %>
+          <%= f.text_field :street_address %>
 
-  <%= f.label :state %>
-  <%= f.collection_select :state_id, State.all, :id, :name %>
+          <%= f.label :city %>
+          <%= f.text_field :city %>
 
-  <%= f.label :max_players %>
-  <%= f.number_field :max_players %>
+          <%= f.label :state %>
+          <%= f.collection_select :state_id, State.all, :id, :name %>
 
-  <%= f.submit "Create Game" %>
+          <%= f.label :max_players %>
+          <%= f.number_field :max_players %>
 
-<% end %>
+          <%= f.submit "Create Game" %>
+
+        <% end %>
+
+    </div>
+  </div>
+</div><br>
