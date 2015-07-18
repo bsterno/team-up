@@ -2,11 +2,16 @@ class GamesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @games = Game.all.order(:start_date)
+    if params[:q].present?
+      @games = Game.search(params[:q]).order("start_date DESC")
+    else
+      @games = Game.all.order("start_date DESC")
+    end
   end
 
   def show
     @game = Game.find(params[:id])
+    @address = @game.street_address
     @players = Player.where(game: @game)
     @player = Player.find_by(user: current_user, game: @game)
   end
@@ -37,6 +42,6 @@ class GamesController < ApplicationController
   protected
 
   def game_params
-    params.require(:game).permit(:user_id, :description, :sport_id, :start_date, :street_address, :city, :state_id, :max_players)
+    params.require(:game).permit(:user_id, :description, :sport_id, :start_date, :street_address, :max_players)
   end
 end

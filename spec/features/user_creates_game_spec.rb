@@ -12,7 +12,6 @@ so that others can join it" do
   scenario "User fills in a game form and submits it" do
     user = FactoryGirl.create(:user)
     sport = FactoryGirl.create(:sport)
-    state = FactoryGirl.create(:state)
     visit new_user_session_path
     fill_in "Email", with: user.email
     fill_in "Password", with: user.password
@@ -20,20 +19,16 @@ so that others can join it" do
 
     visit games_path
     click_link 'Create New Game'
-    fill_in :game_description, with: "5-Aside Madness"
+    fill_in :game_description, with: "Field #3"
     select sport.name, from: :game_sport_id
-    select state.name, from: :game_state_id
     fill_in :game_start_date, with: "2015-07-13T00:00:00"
-    fill_in :game_street_address, with: "123 Street"
-    fill_in :game_city, with: "Boston"
+    fill_in :autocomplete, with: "123 Street"
     fill_in :game_max_players, with: "10"
     click_button "Create Game"
 
-    expect(page).to have_content("5-Aside Madness")
+    expect(page).to have_content("Field #3")
     expect(page).to have_content(sport.name)
-    expect(page).to have_content(state.abbr)
     expect(page).to have_content("07/13, Monday")
-    expect(page).to have_content("Boston")
     expect(page).to have_content("10")
     expect(page).to have_content("Game Created")
   end
@@ -48,10 +43,8 @@ so that others can join it" do
     visit games_path
     click_link 'Create New Game'
     click_button "Create Game"
-    expect(page).to have_content("Description can't be blank")
     expect(page).to have_content("Sport can't be blank")
     expect(page).to have_content("Street address can't be blank")
-    expect(page).to have_content("City can't be blank")
     expect(page).to have_content("Max players can't be blank")
   end
 end

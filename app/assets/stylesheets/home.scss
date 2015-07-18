@@ -7,6 +7,10 @@ body {
   height: 100%;
 }
 
+nav {
+  margin-top: 15px;
+}
+
 h1 {
   color: white;
   margin-top: 0;
@@ -15,6 +19,10 @@ h1 {
 
 h3 {
   color: white;
+}
+
+.main-head {
+  padding-bottom: 0;
 }
 
 .logo img {
@@ -42,7 +50,6 @@ h3 {
 .site-footer {
   background-color: #34495e;
   color: white;
-  padding-bottom: 5px;
 }
 
 * {
@@ -54,7 +61,7 @@ html, body {
 .page-wrap {
   min-height: 100%;
   /* equal to footer height */
-	margin-bottom: -90px;
+	margin-bottom: -99px;
 }
 .page-wrap:after {
   content: "";
@@ -62,7 +69,8 @@ html, body {
 }
 .site-footer, .page-wrap:after {
   /* .push must be the same height as footer */
-	height: 90px;
+  height: 65px;
+  margin-top: 10px;
 }
 
 #featured {
@@ -73,18 +81,21 @@ html, body {
 }
 
 .large-3 {
-  margin-bottom: 25px;
   height: 220px;
+  margin: 8px 0;
+  transition: all 0.15s ease-in-out;
+}
+
+.large-3:hover {
+  opacity: 0.7;
+  transform: scale(1.08);
+  z-index: +1;
 }
 
 .large-3 .mini-1 {
   background-color: #e74c3c;
   width: 100%;
   padding: 67.5px 0 67.5px 0;
-}
-
-.large-3:hover {
-  opacity: 0.5;
 }
 
 .large-3 .mini-2 {
@@ -131,4 +142,44 @@ html, body {
   background-size: cover;
   height: 85px;
   width: 85px;
+}
+
+.pricing-table {
+  border: 0;
+  min-width: 600px;
+}
+
+.pricing-table .title {
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+
+.pricing-table .price {
+  text-align: left;
+}
+
+.pricing-table .bullet-item {
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.google-maps {
+  position: relative;
+  padding-bottom: 75%; // This is the aspect ratio
+  height: 0;
+  overflow: hidden;
+}
+
+.google-maps iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
