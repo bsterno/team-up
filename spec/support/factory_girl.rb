@@ -12,8 +12,6 @@ FactoryGirl.define do
     sequence(:description) { |n| "Shot Practice! #{n}" }
     sport
     street_address "123 Road"
-    city "Boston"
-    state
     start_date "2015-07-13 21:00:00 UTC"
     max_players "10"
   end

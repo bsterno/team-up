@@ -1,51 +1,46 @@
-  <div class="row">
-    <div class="large-12 columns">
-        <div id="featured">
-          <h1 class="small-8 columns small-centered">
-            <%= link_to image_tag('arrow_logo.png'), games_path, class:"t-logo" %>eamUP
-          </h1>
-          <h3 class="small-6 columns small-centered">Pick-up Sports Made Easy</h3>
-          <div class="small-6 columns small-centered" id="team"></div>
-        </div>
-    </div>
-  </div><br>
+<h1 class="main-head small-8 columns small-centered">
+  <%= link_to image_tag('arrow_logo.png'), games_path, class:"t-logo" %>eamUP
+</h1>
+<h3 class="small-8 columns small-centered">Pick-up Sports Made Easy</h3>
+<div class="small-6 columns small-centered" id="team"></div>
 
-  <div class="row">
-    <div class="large-12 columns">
-      <div class="row">
+<div class="small-4 columns small-centered">
+  <%= form_tag games_path, method: :get do %>
+    <%= text_field_tag :q, params[:q], placeholder: "Search by Location" %>
+    <%= submit_tag "Search", class: "tiny button expand" %>
+  <% end %>
+</div><br>
 
-        <a href="/games">
-          <div class="large-3 small-6 columns">
-            <div class="mini-1">
-              <div class="small-6 columns small-centered" id="soccer"></div>
-            </div>
-          </div>
-        </a>
-
-        <a href="/games">
-          <div class="large-3 small-6 columns">
-            <div class="mini-2">
-              <div class="small-6 columns small-centered" id="tennis"></div>
-            </div>
-          </div>
-        </a>
-
-        <a href="/games">
-          <div class="large-3 small-6 columns">
-            <div class="mini-3">
-              <div class="small-6 columns small-centered" id="football"></div>
-            </div>
-          </div>
-        </a>
-
-        <a href="/games">
-          <div class="large-3 small-6 columns">
-            <div class="mini-4">
-              <div class="small-6 columns small-centered" id="basketball"></div>
-            </div>
-          </div>
-        </a>
-
+<div class="tiles row">
+  <a href="/games">
+    <div class="large-3 small-6 columns">
+      <div class="mini-1">
+        <div class="small-6 columns small-centered" id="soccer"></div>
       </div>
     </div>
-  </div>
+  </a>
+
+  <a href="/games">
+    <div class="large-3 small-6 columns">
+      <div class="mini-2">
+        <div class="small-6 columns small-centered" id="tennis"></div>
+      </div>
+    </div>
+  </a>
+
+  <a href="/games">
+    <div class="large-3 small-6 columns">
+      <div class="mini-3">
+        <div class="small-6 columns small-centered" id="football"></div>
+      </div>
+    </div>
+  </a>
+
+  <a href="/games">
+    <div class="large-3 small-6 columns">
+      <div class="mini-4">
+        <div class="small-6 columns small-centered" id="basketball"></div>
+      </div>
+    </div>
+  </a>
+</div>

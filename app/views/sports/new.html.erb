@@ -1,23 +1,26 @@
-<h1>Add Sport</h1>
-<%= form_for @sport do |f| %>
+      <h1>Add Sport</h1>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+      <%= form_for @sport do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <%= f.submit "Add Sport" %>
+      <% end %>
 
-  <%= f.submit "Add Sport" %>
+      <br>
 
-<% end %>
-<br>
+      <table>
+        <thead>
+          <tr>
+            <th>Full List of Sports (A-Z)</th>
+          </tr>
+        </thead>
+          <% @sports.each do |sport| %>
+        <tbody>
+          <tr>
+            <td><%= sport.name %></td>
+          </tr>
+        </tbody>
+          <% end %>
+      </table>
 
-<table>
-    <tr>
-      <th>Full List of Sports</th>
-    </tr>
-    <% @sports.each do |sport| %>
-    <tr>
-      <td><%= sport.name %></td>
-    </tr>
-    <% end %>
-</table>
-
-<%= link_to "Back to Games", games_path %>
+      <%= link_to "Back to Games", games_path %>

@@ -3,11 +3,13 @@
 <head>
   <title>TeamUP</title>
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag "vendor/modernizr" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body onload="initialize()">
 
   <div class="row">
     <div class="large-12 columns">
@@ -60,26 +62,33 @@
       </div>
 
       <div class="page-wrap">
-      <%= yield %>
+        <div class="row">
+          <div class="small-12 columns">
+            <div id="featured">
+                <%= yield %>
+            </div>
+            </div>
+          </div><br>
+
       </div>
 
       <%= javascript_include_tag 'application' %>
       <%= yield :extra_footer %>
 
-        <div class="site-footer large-12 columns">
-          <hr>
-          <div class="row">
-            <div class="small-6 centered columns">
-              <p>Created by <%= link_to "Brian Stern", "https://github.com/bsterno" %></p>
-            </div>
-            <div class="small-6 columns">
-              <ul class="inline-list right">
-                <li><a href="#">Link 1</a></li>
-                <li><a href="#">Link 2</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+<!--         <div class="site-footer large-12 columns">
+  <hr>
+  <div class="row">
+    <div class="small-6 centered columns">
+      <p>Created by <%= link_to "Brian Stern", "https://github.com/bsterno" %></p>
+    </div>
+    <div class="small-6 columns">
+      <ul class="inline-list right">
+        <li><a href="#">GitHub</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+</div> -->
 
     </div>
   </div>
