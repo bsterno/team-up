@@ -69,7 +69,7 @@ html, body {
 }
 .site-footer, .page-wrap:after {
   /* .push must be the same height as footer */
-	height: 65px;
+  height: 65px;
   margin-top: 10px;
 }
 
@@ -82,8 +82,8 @@ html, body {
 
 .large-3 {
   height: 220px;
-  margin: 8px 0 8px 0;
-  transition: all .15s ease-in-out;
+  margin: 8px 0;
+  transition: all 0.15s ease-in-out;
 }
 
 .large-3:hover {
@@ -180,6 +180,6 @@ h2 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100% !important;
-  height: 100% !important;
+  width: 100%;
+  height: 100%;
 }

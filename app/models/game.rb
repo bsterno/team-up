@@ -5,7 +5,7 @@ class Game < ActiveRecord::Base
 
   validates :user, presence: true
   validates :description, uniqueness: true,
-    length: { maximum: 30}
+    length: { maximum: 30 }
   validates :sport, presence: true
   validates :street_address, presence: true
   validates :start_date, presence: true
@@ -16,6 +16,6 @@ class Game < ActiveRecord::Base
   pg_search_scope :search,
     :against => :street_address,
     :using => {
-      :tsearch => {:prefix => true}
+      :tsearch => { :prefix => true }
     }
 end

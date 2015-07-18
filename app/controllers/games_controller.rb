@@ -3,9 +3,9 @@ class GamesController < ApplicationController
 
   def index
     if params[:q].present?
-      @games = Game.search(params[:q])
+      @games = Game.search(params[:q]).order("start_date DESC")
     else
-      @games = Game.all.order(:start_date)
+      @games = Game.all.order("start_date DESC")
     end
   end
 
