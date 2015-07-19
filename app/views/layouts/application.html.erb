@@ -64,9 +64,7 @@
       <div class="page-wrap">
         <div class="row">
           <div class="small-12 columns">
-            <div id="featured">
                 <%= yield %>
-            </div>
           </div>
         </div><br>
       </div>
@@ -74,20 +72,20 @@
       <%= javascript_include_tag 'application' %>
       <%= yield :extra_footer %>
 
-<!--         <div class="site-footer large-12 columns">
-  <hr>
-  <div class="row">
-    <div class="small-6 centered columns">
-      <p>Created by <%= link_to "Brian Stern", "https://github.com/bsterno" %></p>
-    </div>
-    <div class="small-6 columns">
-      <ul class="inline-list right">
-        <li><a href="#">GitHub</a></li>
-        <li><a href="#">LinkedIn</a></li>
-      </ul>
-    </div>
-  </div>
-</div> -->
+      <div class="site-footer large-12 columns">
+        <hr>
+        <div class="row">
+          <div class="small-6 centered columns">
+            <p>Created by <%= link_to "Brian Stern", "https://github.com/bsterno" %></p>
+          </div>
+          <div class="small-6 columns">
+            <ul class="inline-list right">
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
