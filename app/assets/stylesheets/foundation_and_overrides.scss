@@ -464,7 +464,7 @@ $body-font-family: 'Lato', sans-serif;
 // We use these to control button border styles.
 // $button-border-width: 0;
 // $button-border-style: solid;
-// $button-bg-color: $primary-color;
+$button-bg-color: #cf3000;
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
@@ -1400,7 +1400,7 @@ $body-font-family: 'Lato', sans-serif;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: #34495e;
+$topbar-bg-color: #00796B;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1420,7 +1420,7 @@ $topbar-bg-color: #34495e;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-$topbar-link-bg-hover: #2c3e50;
+$topbar-link-bg-hover: #00695C;
 // $topbar-link-bg-color-hover: $charcoal;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
