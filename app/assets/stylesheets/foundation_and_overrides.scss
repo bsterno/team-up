@@ -102,7 +102,7 @@ $font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 // $white-smoke : #F5F5F5;
 // $silver      : #EFEFEF;
 // $smoke       : #EEEEEE;
-// $gainsboro   : #DDDDDD;
+$gainsboro   : #DDDDDD;
 // $iron        : #CCCCCC;
 // $base        : #AAAAAA;
 // $aluminum    : #999999;
@@ -116,7 +116,7 @@ $font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 // $black       : #000000;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+$primary-color: #009688;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -464,7 +464,7 @@ $body-font-family: 'Lato', sans-serif;
 // We use these to control button border styles.
 // $button-border-width: 0;
 // $button-border-style: solid;
-$button-bg-color: #cf3000;
+$button-bg-color: #51A5BA;
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
@@ -1037,7 +1037,7 @@ $button-bg-color: #cf3000;
 
 
 // We use these to control the description styles
-// $price-bg: $white;
+$price-bg: #80CBC4;
 // $price-desc-color: $monsoon;
 // $price-desc-padding: rem-calc(15);
 // $price-desc-align: center;
@@ -1052,7 +1052,7 @@ $button-bg-color: #cf3000;
 // $price-item-align: center;
 // $price-item-font-size: rem-calc(14);
 // $price-item-weight: $font-weight-normal;
-// $price-item-bottom-border: dotted 1px $gainsboro;
+$price-item-bottom-border: dotted 3px $gainsboro;
 
 // We use these to control the CTA area styles
 // $price-cta-bg: $white;

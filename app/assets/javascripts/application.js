@@ -20,8 +20,12 @@
 $(function(){ $(document).foundation(); });
 
 $(document).ready( function () {
-    $('#table_id').DataTable();
-    $('.dataTables_filter input').attr("placeholder", "Multiple keywords");
+    $('#table_id').DataTable( {
+      "bScrollInfinite": true,
+      "bScrollCollapse": true,
+      "sScrollY": "430"
+    })
+    $('.dataTables_filter input').attr("placeholder", "Sport, Date, etc");
 } );
 
 var placeSearch, autocomplete;
@@ -53,7 +57,6 @@ function fillInAddress() {
   var place = autocomplete.getPlace();
 
   for (var component in componentForm) {
-    document.getElementById(component).value = '';
     document.getElementById(component).disabled = false;
   }
 }
