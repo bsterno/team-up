@@ -1,78 +1,107 @@
-<div class="row">
-  <div class="small-10 columns small-centered">
+  <div class="show row">
+    <div class="contains-map small-12 columns small-centered">
 
-    <ul class="pricing-table">
-      <li class="title">
-        <div class"google-maps small-12 columns">
-          <iframe
-           width="600"
-           height="450"
-           frameborder="0" style="border:0"
-           src="https://www.google.com/maps/embed/v1/place?key=<%= ENV["GOOGLE_KEY"] %>
-             &q=<%= @address %>
-             &attribution_source=Google+Maps+Embed+API
-             &attribution_ios_deep_link_id=comgooglemaps://?daddr=<%= @address %>">
-          </iframe>
-        </div>
-      </li>
-      <li class="price"><%= @game.sport.name %></li>
-      <li class="bullet-item"><%= @address %></li>
-      <li class="bullet-item"><%= @game.start_date.strftime("%A, %B %d") %><%= @game.start_date.strftime("%l:%M %p")%></li>
-      <li class="bullet-item"><strong>Additional Information:</strong> <%= @game.description %></li>
-      <li class="bullet-item">
-        <table>
-          <thead>
-            <tr>
-              <th>Players</th>
-              <th>Your Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <% if @players.count == @game.max_players %>
-              <td>FULL</td>
-              <% else %>
-              <td><%= @players.count %>/<%= @game.max_players %></td>
-              <% end %>
+      <ul class="pricing-table">
+        <li class="title">
+          <div class"google-maps small-12 columns">
+            <iframe
+             width="640"
+             height="450"
+             frameborder="0" style="border:0"
+             src="https://www.google.com/maps/embed/v1/place?key=<%= ENV["GOOGLE_KEY"] %>
+               &q=<%= @address %>
+               &attribution_source=Google+Maps+Embed+API
+               &attribution_ios_deep_link_id=comgooglemaps://?daddr=<%= @address %>">
+            </iframe>
+          </div>
+        </li>
 
-              <% if @player.nil? %>
-                <td>Not Attending</td>
-                <% if @players.count == @game.max_players %>
-                  <% else %>
-                <%= button_to "Join Game", game_players_path(@game), method: :post, class: "tiny button expand" %>
-                  <% end %>
-              <% else %>
-                <td>Attending</td>
-                <%= button_to "Leave Game", game_player_path(@game, @player), method: :delete, class: "tiny button expand" %>
-              <% end %>
-            </tr>
-          </tbody>
-        </table>
-      </li>
+        <li class="price">
+          <%= @game.sport.name %><br>
+          <p><%= link_to "Back to all games", games_path %></p>
+        </li>
 
-      <li class="bullet-item">
-        <table>
-          <thead>
-            <tr>
-              <th>Attending</th>
-            </tr>
-          </thead>
-          <% @players.each do |player| %>
-          <tbody>
-            <tr>
-              <td><%= player.user.email %></td>
-            </tr>
-          </tbody>
+        <li class="bullet-item"><h6>Address:</h6><%= @address %></li>
+
+        <li class="bullet-item"><h6>Date and time:</h6><%= @game.start_date.strftime("%A, %B %d") %><br><br><%= @game.start_date.strftime("%l:%M %p")%></li>
+
+        <li class="bullet-item"><h6>Additional information:</h6>
+          <% if @game.description.empty? %>
+            N/A
+          <% else %>
+            <%= @game.description %>
           <% end %>
-        </table>
-      </li>
+        </li>
 
-      <%= link_to "Back to Games", games_path %>
+        <li class="bullet-item">
+          <table>
+            <thead>
+              <tr>
+                <th>Players</th>
+                <th>Your status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <% if @players.count == @game.max_players %>
+                <td>FULL</td>
+                <% else %>
+                <td><%= @players.count %>/<%= @game.max_players %></td>
+                <% end %>
 
-      <% if @game.user == current_user %>
-        <%= button_to "Delete Game", game_path, method: :delete, data: {confirm: "Are you sure you want to delete this game?"} %>
-      <% end %>
-    </ul>
+                <% if @player.nil? %>
+                  <td>Not Attending</td>
+                  <% if @players.count == @game.max_players %>
+                    <% else %>
+                  <%= button_to "Join Game", game_players_path(@game), method: :post, class: "join tiny button expand" %>
+                    <% end %>
+                <% else %>
+                  <td>Attending</td>
+                  <%= button_to "Leave Game", game_player_path(@game, @player), method: :delete, class: "leave tiny button expand" %>
+                <% end %>
+              </tr>
+            </tbody>
+          </table>
+        </li>
 
+        <li class="bullet-item">
+          <table>
+            <thead>
+              <tr>
+                <th>Attending</th>
+              </tr>
+            </thead>
+            <% @players.each do |player| %>
+            <tbody>
+              <tr>
+                <td><%= player.user.email %></td>
+              </tr>
+            </tbody>
+            <% end %>
+          </table>
+        </li>
+
+        <% if @game.user == current_user %>
+        <li class="bullet-item">
+            <%= button_to "Delete Game", game_path, method: :delete, class: "delete tiny button expand", data: { confirm: "Are you sure you want to delete this game? It will no longer be visible to other players." } %>
+        </li>
+        <% end %>
+      </ul>
+
+    </div>
   </div>
-</div>
+
+  <div class="site-footer large-12 columns">
+    <hr>
+    <div class="row">
+      <div class="small-6 centered columns">
+        <p>Created by <%= link_to "Brian Stern", "https://github.com/bsterno" %></p>
+      </div>
+      <div class="small-6 columns">
+        <ul class="inline-list right">
+          <li><a href="https://www.linkedin.com/in/sternbrian"><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="https://github.com/bsterno"><i class="fa fa-github"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>

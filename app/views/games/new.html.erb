@@ -1,33 +1,51 @@
-<div class="row">
-  <div class="small-10 columns small-centered">
+<div id="featured">
 
-    <h1>Create a Game</h1>
+  <div class="row">
+    <div class="small-10 columns small-centered">
 
-    <h4>Don't see your sport? Add it to our database <%= link_to "here", new_sport_path %>.</h4>
+      <h1 class="form-title">Create a Game</h1>
 
-    <%= form_for @game do |f| %>
+      <h5>Don't see your sport? Add it to our database <%= link_to "here", new_sport_path %>.</h5>
 
-      <%= f.label :sport %>
-      <%= f.collection_select :sport_id, Sport.all.order('name'), :id, :name %>
+      <%= form_for @game do |f| %>
 
-      <%= f.label :start_date %>
-      <%= f.datetime_local_field :start_date, value: "#{Date.today}", min: Date.today %>
+        <%= f.label :sport %>
+        <%= f.collection_select :sport_id, Sport.all.order('name'), :id, :name %>
 
-      <div id="locationField">
-        <label for="street_address">Enter Address</label>
-        <input id="autocomplete" placeholder="Enter address"
-           onFocus="geolocate()" type="text" name="game[street_address]"></input>
-      </div>
+        <%= f.label :start_date %>
+        <%= f.datetime_local_field :start_date, value: "#{Date.today}", min: Date.today %>
 
-      <%= f.label "Additional Information/Directions (optional)" %>
-      <%= f.text_field :description, placeholder: "e.g., Field #3" %>
+        <div id="locationField">
+          <label for="street_address">Enter Address</label>
+          <input id="autocomplete" placeholder="Enter address"
+             onFocus="geolocate()" type="text" name="game[street_address]"></input>
+        </div>
 
-      <%= f.label :max_players %>
-      <%= f.number_field :max_players %>
+        <%= f.label "Additional Information/Directions (optional)" %>
+        <%= f.text_field :description, placeholder: "e.g., Field #3" %>
 
-      <%= f.submit "Create Game" %>
+        <%= f.label :max_players %>
+        <%= f.number_field :max_players %>
 
-    <% end %>
+        <%= f.submit "Create Game", class:"create tiny button expand" %>
 
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+<div class="site-footer large-12 columns">
+  <hr>
+  <div class="row">
+    <div class="small-6 centered columns">
+      <p>Created by <%= link_to "Brian Stern", "https://github.com/bsterno" %></p>
+    </div>
+    <div class="small-6 columns">
+      <ul class="inline-list right">
+        <li><a href="https://www.linkedin.com/in/sternbrian"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="https://github.com/bsterno"><i class="fa fa-github"></i></a></li>
+      </ul>
+    </div>
   </div>
 </div>

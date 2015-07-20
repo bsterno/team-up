@@ -1,38 +1,55 @@
 body {
-  background: image_url("gray_gradient.jpg") no-repeat center center fixed;
+  background-color: #ecf0f1;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   height: 100%;
+  font-family: 'Raleway';
+}
+
+.content {
+  min-width: 700px;
 }
 
 nav {
-  margin-top: 15px;
+  margin-top: 10px;
+  color: white;
 }
 
 h1 {
   color: white;
   margin-top: 0;
   padding: 15px 0 25px 0;
+  font-family: "Raleway";
 }
 
-h3 {
+h3, h5 {
   color: white;
 }
 
-.main-head {
-  padding-bottom: 0;
+.main-info {
+  float: left;
+}
+
+.main-info #team {
+  display: block;
+  clear: both;
+  float: left;
+  width: 100%;
+}
+
+.featured-content {
+  margin-top: 25px;
+}
+
+.featured-content p {
+  font-size: 11pt;
 }
 
 .logo img {
   width: 40px;
-  margin: 3px 0 0 8px;
-}
-
-.t-logo img {
-  width: 55px;
-  padding-bottom: 5px;
+  margin: 3px 0 0 12px;
 }
 
 .sign-in a {
@@ -40,16 +57,64 @@ h3 {
   background-color: #00796B;
 }
 
+li.team {
+  text-align: center;
+  padding-right: 0;
+  padding-left: 25px;
+  width: 250px;
+}
+
 #team {
-  background: image_url("success_team.png");
-  background-size: cover;
-  height: 150px;
-  width: 150px;
+  padding-right: 0;
+}
+
+li.search {
+  text-align: center;
+  margin-top: 20px;
+  margin-right: 27%;
+  float: right;
+  max-width: 300px;
+  padding: 0 20px 0 0;
+}
+
+form #q {
+  margin-bottom: 10px;
+}
+
+form .tiny {
+  margin-bottom: 0;
 }
 
 .site-footer {
   background-color: #00796B;
   color: white;
+  height: 70px;
+}
+
+.site-footer hr {
+  margin-bottom: 10px;
+}
+
+.site-footer a {
+  color: #E0F2F1;
+  transition: all 0.15s ease-in-out;
+}
+
+.site-footer a:hover {
+  opacity: 0.54;
+  transform: scale(1.08);
+  z-index: +1;
+}
+
+.featured-content a {
+  color: white;
+  transition: all 0.15s ease-in-out;
+}
+
+.featured-content a:hover {
+  opacity: 0.54;
+  transform: scale(1.08);
+  z-index: +1;
 }
 
 * {
@@ -61,92 +126,42 @@ html, body {
 .page-wrap {
   min-height: 100%;
   /* equal to footer height */
-	margin-bottom: -99px;
+  padding: 0;
 }
 .page-wrap:after {
   content: "";
   display: block;
 }
-.site-footer, .page-wrap:after {
-  /* .push must be the same height as footer */
-  height: 65px;
-  margin-top: 10px;
-}
 
 #featured {
-  background-color: #009688;
-  height: 400px;
-  width: 100%;
-  text-align: center;
-}
-
-.large-3 {
-  height: 220px;
-  margin: 8px 0;
-  transition: all 0.15s ease-in-out;
-}
-
-.large-3:hover {
-  opacity: 0.8;
-  transform: scale(1.08);
-  z-index: +1;
-}
-
-.large-3 .mini-1 {
-  background-color: #e74c3c;
-  width: 100%;
-  padding: 67.5px 0 67.5px 0;
-}
-
-.large-3 .mini-2 {
-  background-color: #3498db;
-  width: 100%;
-  padding: 67.5px 0 67.5px 0;
-}
-
-.large-3 .mini-3 {
-  background-color: #9b59b6;
-  width: 100%;
-  padding: 67.5px 0 67.5px 0;
-}
-
-.large-3 .mini-4 {
-  background-color: #e67e22;
-  width: 100%;
-  padding: 67.5px 0 67.5px 0;
-}
-
-#soccer {
-  background: image_url("soccer_ball.png");
+  background: image_url("blurred_wallpaper.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  height: 85px;
-  width: 85px;
+  height: 672px;
+  width: 100%;
+  text-align: left;
+  color: white;
 }
 
-#basketball {
-  background: image_url("basketball.png");
-  background-size: cover;
-  height: 85px;
-  width: 85px;
+form label {
+  color: white;
 }
 
-#football {
-  background: image_url("american_football.png");
-  background-size: cover;
-  height: 85px;
-  width: 85px;
+.show {
+  max-width: 100%;
+  margin: 0;
 }
 
-#tennis {
-  background: image_url("tennis.png");
-  background-size: cover;
-  height: 85px;
-  width: 85px;
+.contains-map {
+  padding: 0;
 }
 
 .pricing-table {
   border: 0;
   min-width: 600px;
+  margin-bottom: 0;
 }
 
 .pricing-table .title {
@@ -159,14 +174,26 @@ html, body {
   text-align: left;
 }
 
+.price p {
+  margin: 10px 0;
+}
+
 .pricing-table .bullet-item {
   text-align: left;
   padding-left: 20px;
   padding-right: 20px;
 }
 
-h2 {
-  margin-top: 0;
+#featured h1 {
+  margin: 65px 0 0 30px;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#featured #index-header {
+  margin: 15px 0 0 0;
+  padding: 0;
+  text-align: center;
 }
 
 .google-maps {
@@ -186,4 +213,9 @@ h2 {
 
 .divider {
   opacity: 0.12;
+}
+
+#featured .form-title {
+  margin-left: 0;
+  margin-top: 25px;
 }

@@ -4,8 +4,7 @@ class Game < ActiveRecord::Base
   has_many :players, dependent: :destroy
 
   validates :user, presence: true
-  validates :description, uniqueness: true,
-    length: { maximum: 30 }
+  validates :description, length: { maximum: 30 }
   validates :sport, presence: true
   validates :street_address, presence: true
   validates :start_date, presence: true

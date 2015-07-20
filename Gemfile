@@ -13,6 +13,7 @@ gem 'jquery-datatables-rails', '~> 3.3.0'
 gem 'dotenv-rails'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
+gem 'font-awesome-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do

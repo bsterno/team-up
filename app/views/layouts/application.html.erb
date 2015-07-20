@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>TeamUP</title>
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
   <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
   <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -11,20 +11,18 @@
 </head>
 <body onload="initialize()">
 
-  <div class="row">
-    <div class="large-12 columns">
+  <div class="content large-10 small-12 small-centered columns">
+    <div class="small-12 small-centered columns">
 
-      <nav class="top-bar" data-topbar>
+      <nav class="top-bar" data-topbar="topbar">
         <ul class="title-area">
-
           <li class="name">
-              <%= link_to image_tag('arrow_logo.png'), root_path, class:"logo" %>
+              <%= link_to image_tag('arrow_logo.png'), root_path, class:"logo" %>eamUP
           </li>
           <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
         </ul>
 
         <section class="top-bar-section">
-
           <ul class="right">
             <li class="has-dropdown">
               <%- if current_user -%>
@@ -36,56 +34,30 @@
                 <li class="divider"></li>
                 <li class="sign-in"><%= link_to 'Sign In', new_user_session_path %></li>
               <%- end -%>
-              <ul class="dropdown">
-                <li><a href="#">Dropdown Option</a></li>
-                <li><a href="#">Dropdown Option</a></li>
-                <li><a href="#">Dropdown Option</a></li>
-                <li class="divider"></li>
-                <li><a href="#">See all →</a></li>
-              </ul>
             </li>
           </ul>
         </section>
+
       </nav>
 
       <div class="row">
-        <div class="small-6 columns small-centered">
-          <% flash.keys.each do |type| %>
-            <% flash[type].split(":( ").each do |f| %>
-              <div data-alert class="flash <%= type %> alert-box radius">
-                  <%= f %>
+        <div class="small-4 small-offset-6 columns">
+          <%- flash.each do |key, value| -%>
+              <div data-alert class="flash <%= key %> alert-box radius">
+                  <%= value %>
                 <a href="#" class="close">&times;</a>
               </div>
-            <% end %>
           <% end %>
         </div>
       </div>
 
-      <div class="page-wrap">
-        <div class="row">
-          <div class="small-12 columns">
-                <%= yield %>
-          </div>
-        </div><br>
+
+      <div class="page-wrap small-12 small-centered columns">
+        <%= yield %>
       </div>
 
       <%= javascript_include_tag 'application' %>
       <%= yield :extra_footer %>
-
-      <div class="site-footer large-12 columns">
-        <hr>
-        <div class="row">
-          <div class="small-6 centered columns">
-            <p>Created by <%= link_to "Brian Stern", "https://github.com/bsterno" %></p>
-          </div>
-          <div class="small-6 columns">
-            <ul class="inline-list right">
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">LinkedIn</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
 
     </div>
   </div>
