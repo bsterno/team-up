@@ -1,0 +1,64 @@
+<div id="featured">
+
+<div class="row">
+  <div class="small-10 columns small-centered">
+    <p class="back"><%= link_to "Back to all games", games_path %></p>
+    <div class="create-row small-6 columns small-centered">
+      <h1 id="index-header">My Games</h1>
+      <%=link_to "Create New Game", new_game_path, class:"create tiny button expand" %>
+    </div>
+
+    <table id="table_id" class="display">
+      <thead>
+        <tr>
+          <th>Sport</th>
+          <th>Address</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Additional info</th>
+          <th>Players</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @games.each do |game| %>
+        <tr>
+          <td><%= game.game.sport.name %></td>
+          <td><%= link_to game.game.street_address, game_path(game.game) %></td>
+          <td><%= game.game.start_date %></td>
+          <td><%= game.game.start_date.strftime("%l:%M%p") %></td>
+            <% if game.game.description.empty? %>
+              <td>N/A</td>
+            <% else %>
+              <td><%= game.game.description %></td>
+            <% end %>
+          </td>
+            <% if game.game.players.count == game.game.max_players %>
+          <td>FULL</td>
+            <% else %>
+          <td><%= game.game.players.count %>/<%= game.game.max_players %></td>
+            <% end %>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+</div>
+
+<div class="site-footer large-12 columns">
+  <hr>
+  <div class="row">
+    <div class="small-6 centered columns">
+      <p>Created by <%= link_to "Brian Stern", "https://github.com/bsterno" %></p>
+    </div>
+    <div class="small-6 columns">
+      <ul class="inline-list right">
+        <li><a href="https://www.linkedin.com/in/sternbrian"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="https://github.com/bsterno"><i class="fa fa-github"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</div>

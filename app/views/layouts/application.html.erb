@@ -13,7 +13,7 @@
   <div class="content large-10 small-12 small-centered columns">
     <div class="small-12 small-centered columns">
 
-      <nav class="top-bar" data-topbar="topbar">
+      <nav class="top-bar" data-topbar role="navigation">
         <ul class="title-area">
           <li class="name">
               <%= link_to image_tag('arrow_logo.png'), root_path, class:"logo" %>eamUP
@@ -25,10 +25,16 @@
           <ul class="right">
             <li class="has-dropdown">
               <%- if current_user -%>
+                <li class="sign-in"><%= link_to 'All Games', games_path %></li>
+                <li class="divider"></li>
+                <li class="sign-in"><%= link_to 'My Games', user_path(current_user) %></li>
+                <li class="divider"></li>
                 <li class="sign-in"><%= link_to 'Edit Profile', edit_user_registration_path %></li>
                 <li class="divider"></li>
                 <li class="sign-in"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
               <%- else -%>
+                <li class="sign-in"><%= link_to 'All Games', games_path %></li>
+                <li class="divider"></li>
                 <li class="sign-in"><%= link_to 'Sign Up', new_user_registration_path %></li>
                 <li class="divider"></li>
                 <li class="sign-in"><%= link_to 'Sign In', new_user_session_path %></li>
