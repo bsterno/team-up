@@ -22,9 +22,7 @@
         </li>
 
         <li class="bullet-item"><h6>Address:</h6><%= @address %></li>
-
         <li class="bullet-item"><h6>Date and time:</h6><%= @game.start_date.strftime("%A, %B %d") %><br><br><%= @game.start_date.strftime("%l:%M %p")%></li>
-
         <li class="bullet-item"><h6>Additional information:</h6>
           <% if @game.description.empty? %>
             N/A
@@ -41,13 +39,10 @@
                 <th>Your status</th>
               </tr>
             </thead>
+
             <tbody>
               <tr>
-                <% if @players.count == @game.max_players %>
-                <td>FULL</td>
-                <% else %>
-                <td><%= @players.count %>/<%= @game.max_players %></td>
-                <% end %>
+                <td><%= @game.full? %></td>
 
                 <% if @player.nil? %>
                   <td>Not Attending</td>
