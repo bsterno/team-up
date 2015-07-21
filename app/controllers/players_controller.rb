@@ -6,7 +6,7 @@ class PlayersController < ApplicationController
 
   def create
     @game = Game.find(params[:game_id])
-    @player = Player.find_or_initialize_by(game: @game, user: current_user)
+    @player = Player.find_or_initialize_by(game: @game, user: current_user) #replace @game with ajax data ('params')
     @player.save
     flash[:success] = "Game Joined"
     redirect_to game_path(@game)

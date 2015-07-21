@@ -17,4 +17,13 @@ class Game < ActiveRecord::Base
     :using => {
       :tsearch => { :prefix => true }
     }
+
+  def full?
+    if players.count == max_players
+      "Full"
+    else
+      "#{players.count} / #{max_players}"
+    end
+  end
+
 end
