@@ -25,5 +25,4 @@ class Game < ActiveRecord::Base
       "#{players.count} / #{max_players}"
     end
   end
-
 end
