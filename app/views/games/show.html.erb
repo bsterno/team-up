@@ -69,7 +69,7 @@
             <% @players.each do |player| %>
             <tbody>
               <tr>
-                <td><%= player.user.email %></td>
+                <td><%= image_tag(player.user.image) %> <%= player.user.name.split(' ')[0] %></td>
               </tr>
             </tbody>
             <% end %>
