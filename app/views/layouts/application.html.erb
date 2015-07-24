@@ -7,10 +7,10 @@
   <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Raleway', media: 'all' %>
   <%= javascript_include_tag "vendor/modernizr" %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body onload="initialize()">
 
-  <div class="content">
       <nav class="top-bar" data-topbar role="navigation">
         <ul class="title-area">
           <li class="name">
@@ -21,8 +21,8 @@
 
         <section class="top-bar-section">
           <ul class="right">
-            <li class="has-dropdown">
               <%- if current_user -%>
+                <li class="divider"></li>
                 <li class="sign-in"><%= link_to 'All Games', games_path %></li>
                 <li class="divider"></li>
                 <li class="sign-in"><%= link_to 'My Games', user_path(current_user) %></li>
@@ -31,13 +31,13 @@
                 <li class="divider"></li>
                 <li class="sign-in"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
               <%- else -%>
+                <li class="divider"></li>
                 <li class="sign-in"><%= link_to 'All Games', games_path %></li>
                 <li class="divider"></li>
                 <li class="sign-in"><%= link_to 'Sign Up', new_user_registration_path %></li>
                 <li class="divider"></li>
                 <li class="sign-in"><%= link_to 'Sign In', new_user_session_path %></li>
               <%- end -%>
-            </li>
           </ul>
         </section>
 
@@ -61,8 +61,6 @@
 
       <%= javascript_include_tag 'application' %>
       <%= yield :extra_footer %>
-
-  </div>
 
 </body>
 </html>
