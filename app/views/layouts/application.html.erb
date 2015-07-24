@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%= favicon_link_tag 'arrow_logo_360.ico' %>
 <html>
 <head>
   <title>TeamUP</title>
@@ -11,10 +12,14 @@
 </head>
 <body onload="initialize()">
 
+  <div class="page-wrap small-12 small-centered columns">
+
+    <div class="main-image">
+
       <nav class="top-bar" data-topbar role="navigation">
         <ul class="title-area">
           <li class="name">
-              <%= link_to image_tag('arrow_logo.png'), root_path, class:"logo" %>eamUP
+              <div class="shake shake-slow"><%= link_to image_tag('arrow_logo.png'), root_path, class:"logo" %></div><h1 class="logo-end">eamUP</h1>
           </li>
           <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
         </ul>
@@ -40,11 +45,10 @@
               <%- end -%>
           </ul>
         </section>
-
       </nav>
 
       <div class="row">
-        <div class="small-4 small-offset-6 columns">
+        <div class="small-8 small-centered columns">
           <%- flash.each do |key, value| -%>
               <div data-alert class="flash <%= key %> alert-box radius">
                   <%= value %>
@@ -54,10 +58,11 @@
         </div>
       </div>
 
-
-      <div class="page-wrap small-12 small-centered columns">
         <%= yield %>
-      </div>
+
+    </div>
+
+    </div>
 
       <%= javascript_include_tag 'application' %>
       <%= yield :extra_footer %>
