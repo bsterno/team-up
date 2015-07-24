@@ -24,7 +24,7 @@ so that I no longer am attending this game" do
     expect(page).to have_button("Leave Game")
     click_button "Leave Game"
     expect(page).to have_content("You've left this game")
-    expect(page).to have_content(user2.email)
+    expect(page).to have_content(user2.name)
   end
 
   scenario "User cannot leave a game they have already left" do

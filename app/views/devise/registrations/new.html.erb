@@ -32,7 +32,8 @@
         </div>
 
         <div class="actions">
-          <%= f.submit "Sign up" %>
+          <%= f.submit "Sign up", class: "join tiny button expand" %>
+          <%= link_to image_tag('facebook_login.png'), user_omniauth_authorize_path(:facebook) %>
         </div>
       <% end %>
 
