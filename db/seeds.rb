@@ -6,20 +6,35 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# Sport.create!(name: "Badminton")
-# Sport.create!(name: "Baseball")
-# Sport.create!(name: "Basketball")
-# Sport.create!(name: "Field Hockey")
-# Sport.create!(name: "Golf")
-# Sport.create!(name: "Ice Hockey")
-# Sport.create!(name: "Soccer")
-# Sport.create!(name: "Tennis")
-#
-User.create!(email: "jonnybliss@gmail.com", password: "testtest")
-User.create!(email: "philipauu@gmail.com", password: "testtest")
-User.create!(email: "zani.d@gmail.com", password: "testtest")
-User.create!(email: "k3v.stern@gmail.com", password: "testtest")
-User.create!(email: "taha@gmail.com", password: "testtest")
+User.create!(email: "jonnybliss@gmail.com", name: "jb", password: "testtest")
+User.create!(email: "philipauu@gmail.com", name: "philower", password: "testtest")
+User.create!(email: "zani.d@gmail.com", name: "trix", password: "testtest")
+User.create!(email: "k3v.stern@gmail.com", name: "meefl", password: "testtest")
+User.create!(email: "taha@gmail.com", name: "taha", password: "testtest")
+
+sport_list = [
+  'American Football',
+  'Badminton',
+  'Baseball',
+  'Basketball',
+  'Bowling',
+  'Cricket',
+  'Field Hockey',
+  'Golf',
+  'Ice Hockey',
+  'Lacrosse',
+  'Paintball',
+  'Rugby',
+  'Soccer',
+  'Table Tennis',
+  'Tennis',
+  'Ultimate Frisbee',
+  'Volleyball'
+]
+
+sport_list.each do |sport|
+  Sport.create!(name: sport)
+end
 
 # state_list = [
 #   ['Alabama', 'AL'],

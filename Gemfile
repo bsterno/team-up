@@ -14,6 +14,8 @@ gem 'dotenv-rails'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'font-awesome-rails'
+gem 'omniauth-facebook'
+gem 'oauth2'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do

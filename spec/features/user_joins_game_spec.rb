@@ -21,7 +21,7 @@ so that I take up a slot" do
     expect(page).to have_button("Join Game")
     click_button "Join Game"
     expect(page).to have_content("Game Joined")
-    expect(page).to have_content(user.email)
+    expect(page).to have_content(user.name)
   end
 
   scenario "User cannot join they have already joined" do
