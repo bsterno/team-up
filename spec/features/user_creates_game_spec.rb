@@ -18,7 +18,7 @@ so that others can join it" do
     click_button "Log in"
 
     visit games_path
-    click_link 'Create New Game'
+    click_link 'new game'
     fill_in :game_description, with: "Field #3"
     select sport.name, from: :game_sport_id
     fill_in :game_start_date, with: "2015-07-13T00:00:00"
@@ -41,7 +41,7 @@ so that others can join it" do
     click_button "Log in"
 
     visit games_path
-    click_link 'Create New Game'
+    click_link 'new game'
     click_button "Create Game"
     expect(page).to have_content("Sport can't be blank")
     expect(page).to have_content("Street address can't be blank")

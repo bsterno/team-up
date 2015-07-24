@@ -1,14 +1,19 @@
 <div id="featured">
   <div class="row">
 
-    <h1 class="small-12 small-centered columns main-logo"><%= image_tag('arrow_logo.png', class:"main-logo") %>eamUP</h1>
+    <div class="small-12 small-centered columns main-logo-box">
+      <%= image_tag('arrow_logo_360.png', class:"main-logo") %>
+      <div class="eam">
+        <h1>eamUP</h1>
+      </div>
+    </div>
     <hr class="sexy-line">
     <p class="small-12 small-centered columns tag-line">PICKUP SPORTS MADE EASY</p>
       <div class="small-12 small-centered columns search-box">
         <div id="search">
             <%= form_tag games_path, method: :get do %>
               <%= text_field_tag :q, params[:q], placeholder: "Search by Location", class:"aaa-search-input" %>
-              <button class="aaa-search-btn" type="submit"><i class="fa fa-search"></i>
+              <button class="aaa-search-btn" type="submit" id="search"><i class="fa fa-search"></i>
             <% end %>
         </div>
       </div>
@@ -16,10 +21,10 @@
   </div>
 </div>
 
-<div class="row hide-for-small-only">
+<div class="row">
   <div class="featured-content medium-8 small-12 small-centered columns">
     <h3><div class="shake shake-slow"><a href="/games"><i class="fa fa-futbol-o"></i></div></a> GAME ON!</h3>
-    <p>Discover, join, and play games with people in your area.
+    <p class="hide-for-small-only">Discover, join, and play games with people in your area.
     TeamUP makes it easy for anyone to organize or join casual pickup sports.</p>
   </div>
 </div>

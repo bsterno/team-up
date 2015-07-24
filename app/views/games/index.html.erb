@@ -2,9 +2,11 @@
 
 <div class="row">
   <div class="small-10 columns small-centered">
-    <div class="create-row small-12 small-centered columns">
+    <div class="create-row medium-4 small-6 small-centered columns">
       <h1 id="index-header">Games</h1>
-      <%=link_to "Create New Game", new_game_path, class:"create tiny button expand" %>
+      <%=link_to new_game_path, class:"create tiny button expand", id:"new game" do %>
+        <i class="fa fa-plus"></i> New Game
+      <% end %>
     </div>
 
     <table id="table_id" class="display">
@@ -47,7 +49,7 @@
 
 </div>
 
-<div class="panel">
+<footer class="panel">
   <div class="row">
     <hr>
     <div class="small-8 columns">© 2015 - Created by <%= link_to "Brian Stern", "https://github.com/bsterno" %></div>
@@ -58,4 +60,4 @@
       </ul>
     </div>
   </div>
-</div>
+</footer>
