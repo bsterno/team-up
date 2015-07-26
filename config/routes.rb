@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   root 'homes#index'
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
+  namespace :admin do
+    resources :users, only: [:index, :destroy]
+    resources :games, only: [:index, :show, :destroy]
+  end
+
   resources :games, only: [:index, :new, :create, :show, :destroy] do
     resources :players, only: [:new, :create, :destroy]
   end

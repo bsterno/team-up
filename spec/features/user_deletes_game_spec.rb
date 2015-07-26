@@ -4,7 +4,7 @@ require 'rails_helper'
 # [✓] There is a delete button on the show page
 # [✓] I can click the button to delete a game
 # [✓] I am notified when I delete a game
-# [✓] I can only see the delete button if I own the bathroom
+# [✓] I can only see the delete button if I own the game
 
 feature "As a user
 I want to delete a game that I created

@@ -57,7 +57,7 @@ so that others can join it" do
     expect(page).to_not have_content(user3.name)
   end
 
-  scenario 'User fills in bathroom form with invalid information' do
+  scenario 'User fills in game form with invalid information' do
     user = FactoryGirl.create(:user)
     visit new_user_session_path
     fill_in 'Email', with: user.email

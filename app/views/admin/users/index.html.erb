@@ -1,0 +1,26 @@
+<h1>Users</h1>
+
+<table id="table_id" class="display">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Email</th>
+      <th>Sign in Count</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+    <% if user.image.nil? %>
+      <td><%= image_tag("default.png") %><%= user.name %></td>
+    <% else %>
+      <td><%= image_tag(player.user.image) %><%= user.name %></td>
+    <% end %>
+      <td><%= user.email %></td>
+      <td><%= user.sign_in_count %></td>
+      <td><%= button_to "Delete this user", admin_user_path(user), method: :delete %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
