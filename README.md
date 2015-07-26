@@ -4,7 +4,4 @@
 
 == README
 
-TeamUP - A sport-focused app that helps people find casual pickup games and make friends in their city.
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+TeamUP is a sport-focused app that helps people organize and join pickup games in their area.
