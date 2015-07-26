@@ -15,6 +15,13 @@ body {
   width: 100px;
   margin: 0;
   padding-top: 10px;
+  transition: all 0.15s ease-in-out;
+}
+
+.main-logo:hover {
+  opacity: 0.54;
+  transform: scale(1.08);
+  z-index: +1;
 }
 
 .main-logo-box {
@@ -46,6 +53,12 @@ body {
   color: white;
 }
 
+#content {
+  position: absolute;
+  overflow: auto;
+  width: 100%;
+}
+
 .top-bar {
   height: 60px;
   padding: 18px 15px 0 15px;
@@ -67,8 +80,16 @@ body {
 
 h1 {
   color: white;
-  margin-top: 0;
+  margin-top: 20px;
   font-family: "Raleway";
+  text-align: center;
+}
+
+h2 {
+  color: white;
+  margin-top: 20px;
+  font-family: "Raleway";
+  text-align: center;
 }
 
 .tag-line {
@@ -119,6 +140,7 @@ $footer-height: 100px;
 footer {
   height: $footer-height;
   margin-top: 1em;
+  z-index: 99;
 }
 
 footer hr {
@@ -151,8 +173,13 @@ footer.panel a:hover {
   text-align: center;
 }
 
+#index-header img {
+  border-radius: 40%;
+}
+
 .create-row {
   text-align: center;
+  padding: 0;
 }
 
 form label {
@@ -194,6 +221,18 @@ form label {
 
 .player-table {
   padding: 0;
+}
+
+.player-table thead tr th {
+  overflow: hidden;
+}
+
+#content > div > ul > li:nth-child(4) > table > thead > tr > th > div {
+  float: right;
+}
+
+.player-table tbody {
+  background-color: #F9F9F9;
 }
 
 .player-table img {

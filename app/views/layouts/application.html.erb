@@ -12,10 +12,15 @@
 </head>
 <body onload="initialize()">
 
+<% if current_page?(new_game_path) %>
+  <div class="page-wrap small-12 small-centered columns" style="height: 125%;">
+<% elsif current_page?(edit_user_registration_path) %>
+  <div class="page-wrap small-12 small-centered columns" style="height: 160%;">
+<% else %>
   <div class="page-wrap small-12 small-centered columns">
+<% end %>
 
     <div class="main-image">
-
       <nav class="top-bar" data-topbar role="navigation">
         <ul class="title-area">
           <li class="name">
@@ -32,12 +37,16 @@
                 <li class="divider"></li>
                 <li class="sign-in"><%= link_to 'My Games', user_path(current_user) %></li>
                 <li class="divider"></li>
+                <li class="sign-in"><%= link_to 'New Game', new_game_path %></li>
+                <li class="divider"></li>
                 <li class="sign-in"><%= link_to 'Edit Profile', edit_user_registration_path %></li>
                 <li class="divider"></li>
                 <li class="sign-in"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
               <%- else -%>
                 <li class="divider"></li>
                 <li class="sign-in"><%= link_to 'All Games', games_path %></li>
+                <li class="divider"></li>
+                <li class="sign-in"><%= link_to 'New Game', new_game_path %></li>
                 <li class="divider"></li>
                 <li class="sign-in"><%= link_to 'Sign Up', new_user_registration_path %></li>
                 <li class="divider"></li>
@@ -58,8 +67,9 @@
           <% end %>
         </div>
 
-        <%= yield %>
-
+        <div id="content">
+          <%= yield %>
+        </div>
     </div>
   </div>
 

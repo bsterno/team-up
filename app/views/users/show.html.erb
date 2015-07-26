@@ -2,8 +2,14 @@
 
 <div class="row">
   <div class="small-10 columns small-centered">
-    <div class="create-row medium-6 small-9 small-centered columns">
-      <h1 id="index-header">My Games</h1>
+    <div class="create-row medium-9 small-12 small-centered columns">
+      <h1 id="index-header">
+        <% if current_user.image == nil %>
+          <%= image_tag("default.png") %>
+        <% else %>
+          <%= image_tag(current_user.image) %>
+        <% end %>
+        My Games</h1>
       <%= link_to new_game_path, class:"create tiny button expand" do %>
         <i class="fa fa-plus"></i> New Game
       <% end %>

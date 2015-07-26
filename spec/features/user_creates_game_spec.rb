@@ -28,7 +28,7 @@ so that others can join it" do
 
     expect(page).to have_content("Field #3")
     expect(page).to have_content(sport.name)
-    expect(page).to have_content("07/13, Monday")
+    expect(page).to have_content("Monday, July 13")
     expect(page).to have_content("10")
     expect(page).to have_content("Game Created")
   end

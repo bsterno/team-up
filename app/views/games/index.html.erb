@@ -2,8 +2,14 @@
 
 <div class="row">
   <div class="small-10 columns small-centered">
-    <div class="create-row medium-6 small-9 small-centered columns">
-      <h1 id="index-header">Games</h1>
+    <div class="create-row large-8 small-12 small-centered columns">
+
+      <% if params[:q].present? %>
+        <h2 id="index-header">Games matching</h2><p>"<%= params[:q] %>"</p>
+      <% else %>
+        <h2 id="index-header">Games</h2>
+      <% end %>
+
       <%= link_to new_game_path, class:"create tiny button expand", id:"new game" do %>
         <i class="fa fa-plus"></i> New Game
       <% end %>

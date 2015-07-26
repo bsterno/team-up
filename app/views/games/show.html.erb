@@ -44,17 +44,23 @@
     </li>
 
     <li class="bullet-item">
-      <table class="player-table small-12 medium-6 small-centered columns">
+      <table class="player-table small-12 medium-8 large-5 small-centered columns">
         <thead>
           <tr>
-            <th><i class="fa fa-users"></i>  Players</th>
-            <th>Status: ( <%= @game.full? %>  )</th>
+            <th>
+              <i class="fa fa-users"></i>  Players
+              <div class:"status">Status: ( <%= @game.full? %>  )
+            </th>
           </tr>
         </thead>
         <% @players.each do |player| %>
         <tbody>
           <tr>
-            <td><%= image_tag(player.user.image) %><%= player.user.name %></td>
+            <% if player.user.image == nil %>
+              <td><%= image_tag("default.png") %><%= player.user.name %></td>
+            <% else %>
+              <td><%= image_tag(player.user.image) %><%= player.user.name %></td>
+            <% end %>
           </tr>
         </tbody>
         <% end %>

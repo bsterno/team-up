@@ -55,6 +55,7 @@
 
 .create {
   background-color: #F17400;
+  max-width: 200px;
 }
 
 .create:hover {
@@ -75,10 +76,6 @@
   max-width: 200px;
 }
 
-form .join {
-  max-width: 235px;
-}
-
 .join:hover {
   background-color: #2E7D32;
 }
@@ -88,10 +85,6 @@ form .join {
   max-width: 200px;
 }
 
-form .leave {
-  background-color: #E53935;
-  max-width: 235px;
-}
 
 .leave:hover {
   background-color: #C62828;
@@ -99,7 +92,8 @@ form .leave {
 
 .delete {
   background-color: #7E57C2;
-  max-width: 235px;
+  max-width: 200px;
+  margin: 0;
 }
 
 .delete:hover {
@@ -135,6 +129,36 @@ table thead tr th {
 .dataTables_wrapper {
   max-height: 500px;
   margin: 0;
+}
+
+#table_id_filter label {
+  color: white;
+}
+
+#table_id_length label {
+  color: white;
+}
+
+#table_id_info {
+  color: white;
+}
+
+#table_id_paginate {
+  min-width: 123px;
+}
+
+#table_id_previous > a {
+  color: white;
+  padding: 0;
+}
+
+#table_id_next > a {
+  color: white;
+  padding: 0;
+}
+
+#table_id_wrapper > div:nth-child(3) > div:nth-child(2) {
+  padding: 0;
 }
 
 .dataTables_wrapper td {

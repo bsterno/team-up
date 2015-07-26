@@ -1,7 +1,8 @@
 $(document).ready( function () {
     $('#table_id').DataTable( {
       "oLanguage": {
-      "sEmptyTable": "There are no games that match your search!"
+        "sEmptyTable": "There are no games that match your search!",
+        "sSearch": "Filter"
       },
       "sScrollY": "430",
       responsive: true
