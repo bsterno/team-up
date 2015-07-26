@@ -12,8 +12,8 @@
         <%= f.label :sport %>
         <%= f.collection_select :sport_id, Sport.all.order('name'), :id, :name %>
 
-        <%= f.label :start_date %>
-        <%= f.datetime_local_field :start_date, value: "#{Date.today}", min: Date.today %>
+        <%= f.label "Start date and time" %>
+        <%= f.text_field :start_date, value: "#{Date.today}", min: Date.today %>
 
         <div id="locationField">
           <label for="street_address">Enter Address</label>

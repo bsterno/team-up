@@ -18,3 +18,10 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+jQuery('#game_start_date').datetimepicker({
+  minDate: '0',
+  formatTime:'g:i A',
+  format: 'd/m/Y h:i A',
+  step: 30
+});

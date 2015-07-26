@@ -26,7 +26,7 @@ class GamesController < ApplicationController
 
     if @game.save
       flash[:success] = "Game Created"
-      redirect_to games_path
+      redirect_to game_path(@game)
     else
       flash.now[:alert] = @game.errors.full_messages.join("\n")
       render :new
