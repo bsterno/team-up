@@ -25,3 +25,5 @@ jQuery('#game_start_date').datetimepicker({
   format: 'd/m/Y h:i A',
   step: 30
 });
+
+$(".flash").fadeOut(2000);
