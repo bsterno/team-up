@@ -15,7 +15,7 @@
     <% if user.image.nil? %>
       <td><%= image_tag("default.png") %><%= user.name %></td>
     <% else %>
-      <td><%= image_tag(player.user.image) %><%= user.name %></td>
+      <td><%= image_tag(user.image) %><%= user.name %></td>
     <% end %>
       <td><%= user.email %></td>
       <td><%= user.sign_in_count %></td>
