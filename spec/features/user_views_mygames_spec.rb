@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 # Acceptance Criteria
-# [ ] I can go to mygames to see all games that I am attending
-# [ ] I can only see the mygames link if I am logged in
+# [✓] I can go to mygames to see all games that I am attending
+# [✓] I can only see the mygames link if I am logged in
 
 feature "As a user
 I want to go to my games

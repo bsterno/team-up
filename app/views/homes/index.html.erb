@@ -1,45 +1,30 @@
 <div id="featured">
+  <div class="row">
 
-  <div class="main-info small-12 columns">
-    <h1 class="large-4 medium-6 small-6 small-offset-2 columns">Pickup sports made easy!</h1>
-    <div class="row small-offset-2" id="team">
-      <div class="large-block-grid-4">
-        <li class="team">
-          <%= link_to image_tag('basketball_player.png'), root_path %>
-        </li>
-        <li class="search">
-            <%= form_tag games_path, method: :get do %>
-              <%= text_field_tag :q, params[:q], placeholder: "Search by Location" %>
-              <%= submit_tag "Search For Games", class: "tiny button expand" %>
-            <% end %>
-            <h5>OR</h5>
-            <%=link_to "Create New Game", new_game_path, class: "create tiny button expand" %>
-        </li>
+    <div class="small-12 small-centered columns main-logo-box">
+      <%= link_to image_tag('arrow_logo_360.png', class:"main-logo"), games_path %>
+      <div class="eam">
+        <h1>eamUP</h1>
       </div>
     </div>
-  </div>
+    <hr class="sexy-line">
+    <p class="small-12 small-centered columns tag-line">PICKUP SPORTS MADE EASY</p>
+      <div class="small-12 small-centered columns search-box">
+        <div id="search">
+            <%= form_tag games_path, method: :get do %>
+              <%= text_field_tag :q, params[:q], placeholder: "Search by Location", class:"aaa-search-input" %>
+              <button class="aaa-search-btn" type="submit" id="bitton"><i class="fa fa-search"></i>
+            <% end %>
+        </div>
+      </div>
 
-  <div class="row">
-    <div class="featured-content small-6 small-centered columns">
-      <h5><a href="/games"><i class="fa fa-futbol-o"></i></a> A simple way to play pickup sports </h5>
-      <p>Discover, join, and play games with people in your area.
-      TeamUP makes it easy for anyone to organize or join casual pickup sports.</p>
-    </div>
   </div>
-
 </div>
 
-<div class="site-footer large-12 columns">
-  <hr>
-  <div class="row">
-    <div class="small-6 centered columns">
-      <p>© 2015 - Created by <u><%= link_to "Brian Stern", "https://github.com/bsterno" %></ul></p>
-    </div>
-    <div class="small-6 columns">
-      <ul class="inline-list right">
-        <li><a href="https://www.linkedin.com/in/sternbrian"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="https://github.com/bsterno"><i class="fa fa-github"></i></a></li>
-      </ul>
-    </div>
+<div class="row">
+  <div class="featured-content medium-9 small-12 small-centered columns">
+    <h3><div class="shake shake-slow"><a href="/games"><i class="fa fa-futbol-o"></i></div></a> GAME ON!</h3>
+    <p class="hide-for-small-only">Discover, join, and play games with people in your area.
+    TeamUP makes it easy for anyone to organize or join casual pickup sports.</p>
   </div>
 </div>

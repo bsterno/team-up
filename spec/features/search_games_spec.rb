@@ -12,7 +12,7 @@ so that I can see what games are in my area" do
     FactoryGirl.create(:game, description: "Court #5", street_address: "43 Mount Pleasant Street, Somerville, MA, United States")
     visit root_path
     fill_in :q, with: 'Somer'
-    click_button 'Search'
+    click_button 'bitton'
 
     expect(page).to have_content('Court #5')
     expect(page).to_not have_content('Court #6')

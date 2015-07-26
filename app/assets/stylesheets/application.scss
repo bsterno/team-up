@@ -18,47 +18,35 @@
 
  */
 
+.flash.alert.alert-box {
+  z-index: 99;
+  position: absolute;
+}
+
 .alert-box.alert {
- border-radius: 5px;
- background-color: rgba(217, 30, 24, 1);
- z-index: 99;
- position: absolute;
+  background-color: rgba(217, 30, 24, 1);
 }
 
 .alert-box.notice {
- border-radius: 5px;
- background-color: rgba(217, 30, 24, 1);
- z-index: 99;
- position: absolute;
+  background-color: rgba(217, 30, 24, 1);
 }
 
 .alert-box.success {
- border-radius: 5px;
- background-color: rgba(30, 130, 76, 1);
- z-index: 99;
- position: absolute;
+  background-color: rgba(30, 130, 76, 1);
 }
 
 .alert-box.info {
- border-radius: 5px;
- color: #fff;
- background-color: rgba(52, 152, 219, 1);
- z-index: 99;
- position: absolute;
+  color: #fff;
+  background-color: rgba(52, 152, 219, 1);
 }
 
 .alert-box .close {
- background: transparent;
- color: #fff;
- font-size: 2rem;
- top: 19px;
- z-index: 99;
- position: absolute;
-}
-
-.search h5 {
-  margin: 10px 0;
-  color: white;
+  background: transparent;
+  color: #fff;
+  font-size: 2rem;
+  top: 19px;
+  z-index: 99;
+  position: absolute;
 }
 
 .tiny {
@@ -67,6 +55,7 @@
 
 .create {
   background-color: #F17400;
+  max-width: 200px;
 }
 
 .create:hover {
@@ -87,10 +76,6 @@
   max-width: 200px;
 }
 
-form .join {
-  max-width: 235px;
-}
-
 .join:hover {
   background-color: #2E7D32;
 }
@@ -100,6 +85,7 @@ form .join {
   max-width: 200px;
 }
 
+
 .leave:hover {
   background-color: #C62828;
 }
@@ -107,6 +93,7 @@ form .join {
 .delete {
   background-color: #7E57C2;
   max-width: 200px;
+  margin: 0;
 }
 
 .delete:hover {
@@ -119,36 +106,179 @@ form .join {
 }
 
 /* Datatables Styling */
+
+table {
+  border: none;
+  border-spacing: 0;
+}
+
+table thead {
+  background-color: #1bba9a;
+  border: none;
+}
+
+table thead tr th {
+  color: white;
+}
+
+#table_id_wrapper .row {
+  margin: 0;
+  display: inline;
+}
+
 .dataTables_wrapper {
   max-height: 500px;
+  margin: 0;
 }
 
-.dataTables_wrapper tr th:nth-child(2) {
-  max-width: 210px;
+#table_id_filter label {
+  color: white;
 }
 
-.dataTables_wrapper tr th:nth-child(3) {
-  max-width: 95px;
+#table_id_length label {
+  color: white;
 }
 
-.dataTables_wrapper tr td:nth-child(2) {
-  max-width: 210px;
+#table_id_info {
+  color: white;
 }
 
-.dataTables_wrapper tr td:nth-child(3) {
-  max-width: 95px;
+#table_id_paginate {
+  min-width: 123px;
 }
 
-.dataTables_wrapper a {
-  color: #00695C;
-  font-weight: bolder;
+#table_id_previous > a {
+  color: white;
+  padding: 0;
+}
+
+#table_id_next > a {
+  color: white;
+  padding: 0;
+}
+
+#table_id_wrapper > div:nth-child(3) > div:nth-child(2) {
+  padding: 0;
+}
+
+.dataTables_wrapper td {
+  margin: 0;
+}
+
+.dataTables_wrapper .odd {
+  margin: 2px 0;
 }
 
 .dataTables_wrapper a:hover {
   color: #4DB6AC;
 }
 
-table.dataTable td.sorting_1{ background-color: #FFB74D; border:0 lightgrey; }
-table.dataTable td{ background-color: #B2DFDB;  border:0 lightgrey;}
-table.dataTable tr.odd { background-color: #B2DFDB;  border:0 lightgrey;}
-table.dataTable tr.even{ background-color: #B2DFDB; border:0 lightgrey; }
+table.dataTable td.sorting_1{ background-color: rgba(0, 0, 0, 0.15); }
+
+table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
+  top: 8px;
+  left: 4px;
+  height: 16px;
+  width: 16px;
+  display: block;
+  position: absolute;
+  color: white;
+  border: 2px solid white;
+  border-radius: 16px;
+  text-align: center;
+  line-height: 14px;
+  box-shadow: 0 0 3px #444;
+  box-sizing: content-box;
+  content: '+';
+  background-color: #31b131;
+  margin-top: 15px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child.dataTables_empty:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child.dataTables_empty:before {
+  display: none;
+}
+table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child:before {
+  content: '-';
+  background-color: #d33333;
+}
+table.dataTable.dtr-inline.collapsed > tbody > tr.child td:before {
+  display: none;
+}
+table.dataTable.dtr-inline.collapsed.compact > tbody > tr > td:first-child,
+table.dataTable.dtr-inline.collapsed.compact > tbody > tr > th:first-child {
+  padding-left: 27px;
+}
+table.dataTable.dtr-inline.collapsed.compact > tbody > tr > td:first-child:before,
+table.dataTable.dtr-inline.collapsed.compact > tbody > tr > th:first-child:before {
+  top: 5px;
+  left: 4px;
+  height: 14px;
+  width: 14px;
+  border-radius: 14px;
+  line-height: 12px;
+}
+table.dataTable.dtr-column > tbody > tr > td.control,
+table.dataTable.dtr-column > tbody > tr > th.control {
+  position: relative;
+  cursor: pointer;
+}
+table.dataTable.dtr-column > tbody > tr > td.control:before,
+table.dataTable.dtr-column > tbody > tr > th.control:before {
+  top: 50%;
+  left: 50%;
+  height: 16px;
+  width: 16px;
+  margin-top: -10px;
+  margin-left: -10px;
+  display: block;
+  position: absolute;
+  color: white;
+  border: 2px solid white;
+  border-radius: 16px;
+  text-align: center;
+  line-height: 14px;
+  box-shadow: 0 0 3px #444;
+  box-sizing: content-box;
+  content: '+';
+  background-color: #31b131;
+}
+table.dataTable.dtr-column > tbody > tr.parent td.control:before,
+table.dataTable.dtr-column > tbody > tr.parent th.control:before {
+  content: '-';
+  background-color: #d33333;
+}
+
+table.dataTable > tbody > tr.child:hover {
+  background: transparent !important;
+}
+table.dataTable > tbody > tr.child ul {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+table.dataTable > tbody > tr.child ul li {
+  border-bottom: 1px solid #efefef;
+}
+table.dataTable > tbody > tr.child ul li:first-child {
+  padding-top: 0;
+}
+table.dataTable > tbody > tr.child ul li:last-child {
+  border-bottom: none;
+}
+table.dataTable > tbody > tr.child span.dtr-title {
+  display: inline-block;
+  min-width: 75px;
+  font-weight: bold;
+}

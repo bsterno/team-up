@@ -2,9 +2,17 @@
 
 <div class="row">
   <div class="small-10 columns small-centered">
-    <div class="create-row small-6 columns small-centered">
-      <h1 id="index-header">My Games</h1>
-      <%=link_to "Create New Game", new_game_path, class:"create tiny button expand" %>
+    <div class="create-row medium-9 small-12 small-centered columns">
+      <h1 id="index-header">
+        <% if current_user.image == nil %>
+          <%= image_tag("default.png") %>
+        <% else %>
+          <%= image_tag(current_user.image) %>
+        <% end %>
+        My Games</h1>
+      <%= link_to new_game_path, class:"create tiny button expand" do %>
+        <i class="fa fa-plus"></i> New Game
+      <% end %>
     </div>
 
     <table id="table_id" class="display">
@@ -45,19 +53,4 @@
   </div>
 </div>
 
-</div>
-
-<div class="site-footer large-12 columns">
-  <hr>
-  <div class="row">
-    <div class="small-6 centered columns">
-      <p>Created by <%= link_to "Brian Stern", "https://github.com/bsterno" %></p>
-    </div>
-    <div class="small-6 columns">
-      <ul class="inline-list right">
-        <li><a href="https://www.linkedin.com/in/sternbrian"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="https://github.com/bsterno"><i class="fa fa-github"></i></a></li>
-      </ul>
-    </div>
-  </div>
 </div>
