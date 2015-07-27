@@ -6,7 +6,7 @@ $(document).ready( function () {
       },
       "sScrollY": "430",
       responsive: true
-    })
+    });
     $('.dataTables_filter input').attr("placeholder", "Sport, Date, etc");
 } );
 
@@ -307,7 +307,6 @@ Responsive.prototype = {
 	_classLogic: function ()
 	{
 		var that = this;
-		var calc = {};
 		var breakpoints = this.c.breakpoints;
 		var columns = this.s.dt.columns().eq(0).map( function (i) {
 			var className = this.column(i).header().className;
@@ -633,8 +632,6 @@ Responsive.prototype = {
 		}
 
 		// Clone the table with the current data in it
-		var tableWidth   = dt.table().node().offsetWidth;
-		var columnWidths = dt.columns;
 		var clonedTable  = dt.table().node().cloneNode( false );
 		var clonedHeader = $( dt.table().header().cloneNode( false ) ).appendTo( clonedTable );
 		var clonedBody   = $( dt.table().body().cloneNode( false ) ).appendTo( clonedTable );
