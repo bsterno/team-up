@@ -9,7 +9,7 @@
 <tt>http://teamup-app.herokuapp.com/</tt>
 
 
-### About
+## About
 
 Finding enough people to play casual sports with can be a hassle, and especially difficult if you're new to the city and don't know many people. TeamUP aims to solve this problem by allowing people to easily create, or join friendly games by searching in their area.
 
