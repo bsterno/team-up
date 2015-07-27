@@ -27,3 +27,8 @@ For my first independent rails project I wanted to build something that included
 ### Filter by keywords
 
 ![filter page](http://i.imgur.com/QdB9Ev1.jpg)
+
+
+### Game details
+
+![game page](http://i.imgur.com/ET1DkHW.gif)
