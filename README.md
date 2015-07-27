@@ -41,5 +41,5 @@ For my first independent rails project I wanted to build something that included
 
 #### To do:
 
-- Update the way a user navigates all games to make it more intuitive/user friendly
+- Update the way a user navigates through all games to make it more intuitive/user friendly
 - Incorporate more AJAX so the user experience is more seamless
