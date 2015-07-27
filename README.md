@@ -9,26 +9,37 @@
 <tt>http://teamup-app.herokuapp.com/</tt>
 
 
-##### About
+#### About
 
 Finding enough people to play casual sports with can be a hassle, and especially difficult if you're new to the city and don't know many people. TeamUP aims to solve this problem by allowing people to easily create, or join friendly games by searching in their area.
 
 
-##### Why build TeamUP?
+#### Why build TeamUP?
 
 For my first independent rails project I wanted to build something that included my passion for sports, while at the same time solve an issue that my friends and I have experienced. This is a work in progress and I hope to add additional features in the near future.
 
 
-### Search by location
+#### Search by location
 
 ![search page](http://i.imgur.com/Cg227Vc.jpg)
 
 
-### Filter by keywords
+#### Filter by keywords
 
 ![filter page](http://i.imgur.com/QdB9Ev1.jpg)
 
 
-### Game details
+#### Game details
 
 ![game page](http://i.imgur.com/ET1DkHW.gif)
+
+
+#### Mobile-friendly design
+
+![mobile 1](http://i.imgur.com/dBaPDG0.jpg)
+
+
+#### To do:
+
+- Update the way a user navigates all games to make it more intuitive/user friendly
+- Incorporate more AJAX so the user experience is more seamless
