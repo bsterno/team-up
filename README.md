@@ -6,7 +6,7 @@
 
 ![main page](http://i.imgur.com/A72swg8.jpg)
 
-<tt>http://teamup-app.herokuapp.com/</tt>
+<tt>http://teamup-app.herokuapp.com</tt>
 
 
 ## About
