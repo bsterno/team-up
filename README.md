@@ -20,6 +20,7 @@ For my first independent rails project I wanted to build something that included
 
 
 ## Search by location
+##### Partial-word matches allows for users to search for games by any part of a street address, city, or state.
 
 ![search page](http://i.imgur.com/Cg227Vc.jpg)
 
