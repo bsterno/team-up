@@ -1,7 +1,7 @@
 # TeamUP
 
 ![Build Status](https://codeship.com/projects/353cf3e0-0809-0133-3467-025d73056a1f/status?branch=master)
-<a href="https://codeclimate.com/github/bsterno/team-up"><img src="https://codeclimate.com/github/bsterno/team-up/badges/gpa.svg" /></a>
+[![Code Climate](https://codeclimate.com/github/bsterno/team-up/badges/gpa.svg)](https://codeclimate.com/github/bsterno/team-up)
 
 
 ![main page](http://i.imgur.com/A72swg8.jpg)
