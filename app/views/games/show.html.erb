@@ -30,11 +30,7 @@
     <h6>Address:</h6><%= @address %><br><br><br>
     <h6>Date and time:</h6><%= @game.start_date.strftime("%A, %B %d") %><br><%= @game.start_date.strftime("%l:%M %p")%><br><br><br>
     <h6>Additional information:</h6>
-      <% if @game.description.empty? %>
-        N/A
-      <% else %>
-        <%= @game.description %>
-      <% end %>
+      <%= @game.description? %>
 
       <% if @player.nil? %>
         <%= button_to "Join Game", game_players_path(@game), method: :post, class: "join tiny button expand" %>

@@ -25,4 +25,12 @@ class Game < ActiveRecord::Base
       "#{players.count} / #{max_players}"
     end
   end
+
+  def description?
+    if description.empty?
+      "N/A"
+    else
+      description
+    end
+  end
 end
