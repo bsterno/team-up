@@ -64,9 +64,9 @@
     </li>
 
     <% if @game.user == current_user %>
-    <li class="bullet-item">
+      <li class="bullet-item">
         <%= button_to "Delete Game", game_path, method: :delete, class: "delete tiny button expand", data: { confirm: "Are you sure you want to delete this game? It will no longer be visible to other players." } %>
-    </li>
+      </li>
     <% end %>
   </ul>
 
