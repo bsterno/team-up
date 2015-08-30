@@ -16,6 +16,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'font-awesome-rails'
 gem 'omniauth-facebook'
 gem 'oauth2'
+gem 'chartkick'
+gem 'groupdate'
+gem 'active_median'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
