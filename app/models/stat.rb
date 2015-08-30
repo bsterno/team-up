@@ -13,9 +13,9 @@ class Stat < ActiveRecord::Base
       array << sport["name"]
     end
 
-    sport_count = Hash.new(0)
-    array.each{|key| sport_count[key] += 1}
-    sport_count
+    @@sport_count = Hash.new(0)
+    array.each{|key| @@sport_count[key] += 1}
+    @@sport_count
   end
 
 end
