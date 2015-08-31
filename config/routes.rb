@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, only: [:index, :destroy]
     resources :games, only: [:index, :show, :destroy]
+    resources :stats, only: [:index]
   end
 
   resources :games, only: [:index, :new, :create, :show, :destroy] do
@@ -15,7 +16,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
-  resources :stats, only: [:index]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
