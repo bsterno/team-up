@@ -1,0 +1,52 @@
+<div id="featured">
+
+  <div class="row">
+    <div class="small-10 columns small-centered">
+      <div class="create-row large-8 small-12 small-centered columns">
+
+          <h2 id="index-header">Data and Statistics</h2>
+
+      </div>
+
+      <%= pie_chart Stat.sports %>
+
+        <table id="table_id" class="display">
+          <thead>
+            <tr>
+              <th>Sport</th>
+              <th>Address</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Additional info</th>
+              <th>Players</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @games.each do |game| %>
+            <tr>
+              <td><%= game.sport.name %></td>
+              <td><%= link_to game.street_address, game_path(game) %></td>
+              <td><%= game.start_date %></td>
+              <td><%= game.start_date.strftime("%l:%M%p") %></td>
+                <% if game.description.empty? %>
+                  <td>N/A</td>
+                <% else %>
+                  <td><%= game.description %></td>
+                <% end %>
+              </td>
+                <% if game.players.count == game.max_players %>
+              <td>FULL</td>
+                <% else %>
+              <td><%= game.players.count %>/<%= game.max_players %></td>
+                <% end %>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+    </div>
+  </div>
+
+
+</div>

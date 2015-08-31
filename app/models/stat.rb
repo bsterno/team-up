@@ -1,5 +1,4 @@
 class Stat < ActiveRecord::Base
-
   def self.sports
     games = Game.all
     sports = []
@@ -17,5 +16,4 @@ class Stat < ActiveRecord::Base
     array.each{|key| @@sport_count[key] += 1}
     @@sport_count
   end
-
 end
